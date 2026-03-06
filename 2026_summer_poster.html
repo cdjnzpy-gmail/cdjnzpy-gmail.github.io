@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKU-Zurich Summer School Poster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+        @page {
+            size: A4 portrait; 
+            margin: 0; 
+        }
+        html, body {
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+        }
+        * {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f3f4f6; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .poster-container {
+            width: 800px;
+            height: 1130px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --pku-red: #8C0014;
+        }
+        .curve-bg {
+            position: absolute;
+            top: -5%;
+            right: -5%;
+            width: 450px;
+            height: 520px;
+            border-bottom-left-radius: 200px;
+            overflow: hidden;
+            border: 16px solid var(--pku-red);
+            z-index: 0;
+            box-shadow: -10px 10px 30px rgba(140, 0, 20, 0.2);
+        }
+        .curve-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.95;
+            mix-blend-mode: multiply; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        
+        <div class="curve-bg">
+            <img src="pho/bg_pku.jpg" alt="PKU Campus Background">
+        </div>
+
+        <div class="absolute top-[-2%] right-[-2%] w-[500px] h-[500px] bg-[#8C0014] rounded-bl-[280px] opacity-10 z-0"></div>
+
+        <div class="relative z-10 w-[55%] pt-16 pl-12 pr-4">
+            
+            <h2 class="text-[#8C0014] font-extrabold text-lg tracking-widest uppercase mb-1">
+                PhD Summer School 2026
+            </h2>
+            <h1 class="text-[#8C0014] font-black text-[30px] leading-[1.05] uppercase tracking-tight mb-4">
+                Machine <br> Learning <br>For <br> Macroeconomics <br>And Finance
+            </h1>
+            <p class="text-gray-800 font-bold text-[15px] mb-6 tracking-wide border-l-4 border-[#8C0014] pl-3">
+                July 6–10, 2026 • Beijing, China<br>
+                <span class="text-gray-500 font-semibold text-[13px]">Format: In-person | Language: English</span>
+            </p>
+
+            <p class="text-[13px] leading-relaxed text-gray-800 font-medium mb-8 pr-2">
+                This summer school offers an intensive series of methodological lectures and tutorials designed to equip early-career researchers (including PhD students and junior faculty) and exceptional students with theoretical foundations and practical applications in deep learning and macro-finance.
+            </p>
+
+            <h3 class="text-[#8C0014] font-bold text-[16px] italic mb-3">Focus Areas:</h3>
+            <ul class="text-[13px] leading-snug space-y-2 text-gray-800 mb-8 font-semibold">
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> Foundations of deep learning & computational tools</li>
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> Heterogeneous-agent macroeconomic models</li>
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> Maliar–Maliar–Winant methods</li>
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> Deep Equilibrium Networks</li>
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> DeepHAM & structural reinforcement learning</li>
+                <li class="flex items-start"><span class="text-[#8C0014] mr-2">✦</span> Continuous-time macro-finance & PDE methods</li>
+            </ul>
+            <p class="text-[12px] bg-gray-100 text-gray-700 p-2 rounded border-l-2 border-gray-400 font-medium mb-8 inline-block shadow-sm">
+                * Includes hands-on tutorials emphasizing concepts to code.
+            </p>
+
+            <h3 class="text-white bg-[#8C0014] inline-block px-3 py-1 font-bold text-[14px] uppercase mb-3 shadow-sm rounded-sm">
+                Post-Summer School Conference
+            </h3>
+            <p class="text-[13px] leading-relaxed text-gray-800 font-medium mb-4 pr-2">
+                Following the summer school, attend a two-day conference <strong>(July 11–12)</strong> bringing together leading academics to discuss recent advancements in machine learning and macroeconomics.
+            </p>
+
+        </div>
+
+        <div class="absolute top-[39%] right-[4%] w-[38%] bg-white rounded-[25px] border-[4px] border-[#8C0014] pt-4 pb-3 px-2 shadow-2xl z-20">
+            <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-[#8C0014] text-white px-4 py-1 rounded-full font-extrabold text-[11px] uppercase whitespace-nowrap shadow-md">
+                Keynote Speakers & Lecturers
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-1 gap-y-3 justify-items-center mt-2">
+                
+                <div class="text-center w-full">
+                    <img src="pho/WE.jpg" alt="Weinan E" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-[#8C0014] mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Weinan E</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Peking Univ.<br><span class="text-[#8C0014]">(Keynote)</span></p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/GG.png" alt="Goutham Gopalakrishna" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Goutham Gopalakrishna</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Toronto</p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/FK.jpg" alt="Felix Kubler" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Felix Kubler</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Zurich</p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Serguei Maliar</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Santa Clara U</p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/BM.jpg" alt="Benjamin Moll" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Benjamin Moll</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">LSE <span class="text-blue-600">(Online)</span></p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/JP.jpg" alt="Jonathan Payne" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Jonathan Payne</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Princeton Univ.</p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/SS.png" alt="Simon Scheidegger" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Simon Scheidegger</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">HEC Lausanne</p>
+                </div>
+
+                <div class="text-center w-full">
+                    <img src="pho/YY.jpg" alt="Yucheng Yang" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-[#8C0014] mb-1 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Yucheng Yang</h4>
+                    <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Zurich</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-12 right-12 flex justify-between items-end z-10">
+            
+            <div class="w-[65%]">
+                <h3 class="text-[#8C0014] font-extrabold uppercase text-[15px] mb-3 tracking-wide">Organizing Committee & Hosts</h3>
+                
+                <div class="flex items-center space-x-5 mb-3">
+                    <div class="flex items-center space-x-3 shrink-0">
+                        <img src="pho/pku.jpg" alt="Peking University" class="w-[60px] h-[60px] rounded-full object-contain bg-white shadow-md border border-gray-100 p-1">
+                        <img src="pho/zu.png" alt="University of Zurich" class="w-[60px] h-[60px] rounded-full object-contain bg-white shadow-md border border-gray-100 p-1">
+                    </div>
+                    
+                    <div class="text-[12px] text-gray-800 font-bold border-l-2 border-[#8C0014] pl-4 space-y-1">
+                        <p>Felix Kubler <span class="text-gray-500 font-medium">(UZH)</span></p>
+                        <p>Bo Li <span class="text-gray-500 font-medium">(PKU)</span></p>
+                        <p>Yucheng Yang <span class="text-gray-500 font-medium">(UZH)</span></p>
+                    </div>
+                </div>
+
+                <div class="flex items-center text-[12px] font-bold text-gray-800 mt-2">
+                    <svg class="w-5 h-5 text-[#8C0014] mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Peking University, Beijing, China
+                </div>
+            </div>
+
+            <div class="w-[30%] flex flex-col items-end text-right">
+                <h3 class="text-[#8C0014] font-extrabold uppercase text-[15px] mb-2 tracking-wide">Scan To Apply</h3>
+                <div class="bg-white p-1.5 border-2 border-dashed border-[#8C0014] rounded-lg shadow-sm mb-2 inline-block">
+                    <img src="qr-code.png" alt="QR Code" class="w-[100px] h-[100px] object-cover">
+                </div>
+                <p class="text-[11px] font-bold text-[#8C0014]">Deadline: March 20, 2026</p>
+                <p class="text-[10px] text-gray-500 font-medium leading-tight mt-1">Free of charge for Summer School</p>
+            </div>
+
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full bg-[#8C0014] py-2.5 text-center text-white text-[12px] font-bold tracking-widest z-20 shadow-[0_-4px_6px_rgba(0,0,0,0.1)]">
+            VISIT US @ <a href="https://xxxx" class="underline hover:text-gray-200">https://xxxx</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

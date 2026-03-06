@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKU-Zurich PhD Summer School 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .lang-zh { display: none; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 300ms, transform 300ms; }
+        .modal-leave { opacity: 1; transform: scale(1); }
+        .modal-leave-active { opacity: 0; transform: scale(0.95); transition: opacity 300ms, transform 300ms; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased relative">
+
+    <nav class="bg-white shadow-md fixed w-full z-40 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl text-blue-900">
+                    <span class="lang-en">PKU-Zurich Summer School</span>
+                    <span class="lang-zh">北大-苏黎世讲习班</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="openModal()" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md transition duration-200 transform hover:scale-105">
+                        <span class="lang-en">Apply Now</span>
+                        <span class="lang-zh">马上申请</span>
+                    </button>
+                    <button onclick="toggleLanguage()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-150">
+                        <span id="lang-btn-text">中文 / English</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-bg text-white pt-32 pb-24 px-4 sm:px-6 lg:px-8 text-center mt-16">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
+            <span class="lang-en">PKU-Zurich PhD Summer School on <br><span class="text-blue-400">Machine Learning for Macroeconomics and Finance</span></span>
+            <span class="lang-zh">北京大学–苏黎世大学 <br><span class="text-blue-400">机器学习与宏观金融博士生暑期讲习班</span></span>
+        </h1>
+        <p class="text-xl sm:text-2xl mb-8 font-light">
+            <span class="lang-en">July 6–10, 2026 · Beijing, China</span>
+            <span class="lang-zh">2026 年 7 月 6–10 日 · 中国，北京</span>
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+                <span class="lang-en">About the Program</span>
+                <span class="lang-zh">讲习班简介</span>
+            </h2>
+            <div class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-l-8 border-blue-600">
+                <div class="text-xl sm:text-2xl font-medium text-gray-800 leading-relaxed mb-8">
+                    <p class="lang-en">The PKU–Zurich PhD Summer School on Machine Learning for Macroeconomics and Finance is an international academic program focusing on frontier applications of machine learning in macroeconomics and macro-finance. The program convenes world-leading faculty to provide rigorous, systematic training in deep learning, reinforcement learning, and discrete- and continuous-time methods, with applications to heterogeneous-agent models, asset pricing, macro-finance, and dynamic general equilibrium.</p>
+                    <p class="lang-zh">北京大学–苏黎世大学 PhD Summer School on Machine Learning for Macroeconomics and Finance 是由北京大学与苏黎世大学学者联合主办的高端国际博士生暑期讲习班，聚焦<span class="text-blue-700 font-bold">机器学习方法在宏观经济学与宏观金融中的前沿应用</span>。讲习班邀请来自世界一流大学的顶尖学者，系统讲授深度学习、强化学习与离散/连续时间方法在异质性主体模型、资产定价、宏观金融与动态一般均衡中的最新理论进展与计算工具，旨在帮助青年学者掌握前沿研究范式，推动跨学科基础研究。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-100 pt-8 mt-4 max-w-4xl mx-auto">
+                    <div class="bg-blue-50 rounded-xl p-6 flex items-center border border-blue-100 shadow-sm justify-center">
+                        <div class="text-5xl mr-5">🏫</div>
+                        <div>
+                            <div class="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
+                                <span class="lang-en">Class Format</span>
+                                <span class="lang-zh">授课形式</span>
+                            </div>
+                            <div class="text-xl font-bold text-blue-900">
+                                <span class="lang-en">In-person (Beijing)</span>
+                                <span class="lang-zh">线下授课（北京）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 rounded-xl p-6 flex items-center border border-indigo-100 shadow-sm justify-center">
+                        <div class="text-5xl mr-5">🗣️</div>
+                        <div>
+                            <div class="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
+                                <span class="lang-en">Language</span>
+                                <span class="lang-zh">授课语言</span>
+                            </div>
+                            <div class="text-xl font-bold text-indigo-900">
+                                <span class="lang-en">English</span>
+                                <span class="lang-zh">全英文授课</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-green-800 to-teal-900 text-white">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-48 h-48 bg-green-400 opacity-20 rounded-full blur-2xl"></div>
+                
+                <div class="relative p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-2/3 mb-8 md:mb-0">
+                        <div class="inline-block bg-green-500 text-white font-bold px-3 py-1 rounded-full text-sm mb-4 tracking-wide uppercase shadow-sm">
+                            <span class="lang-en">Post-Summer School Event</span>
+                            <span class="lang-zh">讲习班后续重点会议</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
+                            <span class="lang-en">Conference on Machine Learning for Macroeconomics and Finance</span>
+                            <span class="lang-zh">机器学习与宏观金融学术会议</span>
+                        </h2>
+                        <p class="text-lg text-green-100 font-medium flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="lang-en">July 11–12, 2026 | Peking University</span>
+                            <span class="lang-zh">2026年7月11–12日 | 北京大学</span>
+                        </p>
+                        <p class="text-green-200 mt-2 italic">
+                            <span class="lang-en">📢 Call for papers is coming soon!</span>
+                            <span class="lang-zh">📢 征稿启事 (Call for Papers) 即将发布！</span>
+                        </p>
+                    </div>
+                    <div class="md:w-1/3 flex justify-end">
+                        <a href="2026_summer_conference.html" class="bg-white text-green-900 hover:bg-green-50 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 transform hover:-translate-y-1 flex items-center">
+                            <span class="lang-en">Conference Details</span>
+                            <span class="lang-zh">查看会议详情</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+                <span class="lang-en">Organizing Committee</span>
+                <span class="lang-zh">组织委员会</span>
+            </h2>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 flex flex-col md:flex-row items-center justify-between">
+                <ul class="text-lg md:text-xl text-gray-800 font-medium space-y-4 w-full md:w-2/3 mb-6 md:mb-0">
+                    <li class="flex items-center"><span class="text-blue-600 mr-3">▪</span> <span class="lang-en"><strong>Felix Kubler</strong> (University of Zurich)</span><span class="lang-zh"><strong>Felix Kubler</strong> (University of Zurich，北京大学经济学院荣誉教授)</span></li>
+                    <li class="flex items-center"><span class="text-blue-600 mr-3">▪</span> <span class="lang-en"><strong>Bo Li</strong> (Peking University)</span><span class="lang-zh"><strong>李博</strong> (北京大学)</span></li>
+                    <li class="flex items-center"><span class="text-blue-600 mr-3">▪</span> <span class="lang-en"><strong>Yucheng Yang</strong> (University of Zurich)</span><span class="lang-zh"><strong>杨雨成</strong> (University of Zurich)</span></li>
+                </ul>
+                <div class="w-full md:w-1/3 flex justify-start md:justify-end space-x-6">
+                    <img src="pho/pku.jpg" alt="Peking University" class="w-24 h-24 rounded-full object-contain bg-white shadow-sm border border-gray-100 p-2">
+                    <img src="pho/zu.png" alt="University of Zurich" class="w-24 h-24 rounded-full object-contain bg-white shadow-sm border border-gray-100 p-2">
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+                <span class="lang-en">Instructors and Speakers</span>
+                <span class="lang-zh">授课教师与演讲嘉宾</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <a href="https://www.math.pku.edu.cn/teachers/weinan/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/WE.jpg" alt="Weinan E" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Weinan E</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">Peking University; CAS Fellow</span><span class="lang-zh">北京大学，中科院院士</span></p>
+                    <p class="text-blue-600 font-medium text-sm mt-3 bg-blue-50 inline-block px-3 py-1 rounded-full"><span class="lang-en">Keynote: AI for Science</span><span class="lang-zh">主旨演讲: AI for Science</span></p>
+                </a>
+
+                <a href="https://goutham-atwork.github.io/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/GG.png" alt="Goutham Gopalakrishna" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Goutham Gopalakrishna</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">University of Toronto, Rotman</span><span class="lang-zh">University of Toronto, Rotman</span></p>
+                </a>
+
+                <a href="https://sites.google.com/site/fkubler/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/FK.jpg" alt="Felix Kubler" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-4 border-gray-50 group-hover:border-blue-100 transition">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Felix Kubler</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">University of Zurich</span><span class="lang-zh">University of Zurich</span></p>
+                </a>
+
+                <a href="https://web.stanford.edu/~maliars/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Serguei Maliar</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">Santa Clara University</span><span class="lang-zh">Santa Clara University</span></p>
+                </a>
+
+                <a href="https://benjaminmoll.com/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/BM.jpg" alt="Benjamin Moll" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Benjamin Moll</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">LSE</span><span class="lang-zh">LSE</span></p>
+                    <p class="text-blue-600 font-medium text-sm mt-3 bg-blue-50 inline-block px-3 py-1 rounded-full"><span class="lang-en">Special Online Lecture</span><span class="lang-zh">特别线上讲座</span></p>
+                </a>
+
+                <a href="https://sites.google.com/site/jonathanedgarpayne/" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/JP.jpg" alt="Jonathan Payne" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Jonathan Payne</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">Princeton University</span><span class="lang-zh">Princeton University</span></p>
+                </a>
+
+                <a href="https://sites.google.com/site/simonscheidegger/home" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/SS.png" alt="Simon Scheidegger" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Simon Scheidegger</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">HEC Lausanne</span><span class="lang-zh">HEC Lausanne</span></p>
+                </a>
+
+                <a href="https://sites.google.com/site/yangyucheng1993/home" target="_blank" class="block bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
+                    <img src="pho/YY.jpg" alt="Yucheng Yang" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-sm">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2">Prof. Yucheng Yang</h3>
+                    <p class="text-gray-600 text-sm"><span class="lang-en">University of Zurich</span><span class="lang-zh">University of Zurich</span></p>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+                <span class="lang-en">Topics and Course Coverage</span>
+                <span class="lang-zh">教学内容与方向</span>
+            </h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="flex flex-col">
+                    <span class="lang-en">
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> Foundations of deep learning and computational tools</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> Heterogeneous-agent macroeconomic models</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> Maliar–Maliar–Winant methods</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> Deep Equilibrium Networks</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> DeepHAM and structural reinforcement learning</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> Continuous-time macro-finance and PDE methods</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> Frontier applications in macroeconomics and finance</div>
+                    </span>
+                    <span class="lang-zh">
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> 深度学习基础与计算工具</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> 异质性主体宏观模型（Heterogeneous Agent Models）</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> Maliar–Maliar–Winant 方法</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> Deep Equilibrium Nets</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> DeepHAM 与结构化强化学习</div>
+                        <div class="px-8 py-5 bg-white text-xl text-gray-800 font-medium flex items-center"><span class="mr-4 text-gray-400">❖</span> 连续时间宏观金融与 PDE 方法</div>
+                        <div class="px-8 py-5 bg-blue-50 text-xl text-blue-900 font-semibold flex items-center"><span class="mr-4 text-blue-500">❖</span> 前沿应用专题</div>
+                    </span>
+                </div>
+            </div>
+            <div class="mt-6 p-5 bg-yellow-50 text-yellow-800 rounded-lg text-lg border-l-4 border-yellow-500 font-medium shadow-sm">
+                <span class="lang-en">📌 All lectures are complemented by hands-on tutorials, emphasizing a complete workflow from concepts to code, and from economic models to numerical implementation.</span>
+                <span class="lang-zh">📌 课程配套 hands-on tutorials，强调从理论到代码、从模型到计算的完整学术训练。</span>
+            </div>
+        </section>
+
+        <section class="mb-8 flex justify-center pt-8 pb-4 border-t border-gray-200">
+            <button onclick="openModal()" class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full text-2xl font-bold shadow-xl transition duration-300 transform hover:scale-105 flex items-center animate-bounce">
+                <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="lang-en">Apply Now (Details & Forms)</span>
+                <span class="lang-zh">马上申请（查看报名要求与通道）</span>
+            </button>
+        </section>
+
+    </div>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">
+                    <span class="lang-en">Fees & Related Conference</span>
+                    <span class="lang-zh">费用与后续会议说明</span>
+                </h3>
+                <ul class="space-y-3 text-sm">
+                    <li><strong><span class="lang-en">Summer School:</span><span class="lang-zh">暑期讲习班:</span></strong> <span class="lang-en">Free of charge</span><span class="lang-zh">免费参加</span></li>
+                    <li><strong><span class="lang-en">Conference (July 11–12):</span><span class="lang-zh">学术会议 (7月11–12日):</span></strong> <span class="lang-en">Details TBA; registration fee required</span><span class="lang-zh">另行通知，将收取会务注册费</span></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">
+                    <span class="lang-en">Contact Information</span>
+                    <span class="lang-zh">联系我们</span>
+                </h3>
+                <ul class="space-y-3 text-sm">
+                    <li>
+                        <strong><span class="lang-en">Academic Inquiries:</span><span class="lang-zh">学术咨询:</span></strong> 
+                        <span class="lang-en">Yucheng Yang (Email: <a href="mailto:yucheng.yang@uzh.ch" class="hover:text-white underline">yucheng.yang@uzh.ch</a>)</span>
+                        <span class="lang-zh">杨雨成 (邮箱: <a href="mailto:yucheng.yang@uzh.ch" class="hover:text-white underline">yucheng.yang@uzh.ch</a>)</span>
+                    </li>
+                    <li>
+                        <strong><span class="lang-en">Application & Other Inquiries:</span><span class="lang-zh">申请及其他咨询:</span></strong> 
+                        <span class="lang-en">Peiyuan Zhang (Email: <a href="mailto:zpyuan@pku.edu.cn" class="hover:text-white underline">zpyuan@pku.edu.cn</a>)</span>
+                        <span class="lang-zh">张培元 (邮箱: <a href="mailto:zpyuan@pku.edu.cn" class="hover:text-white underline">zpyuan@pku.edu.cn</a>)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="applicationModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity backdrop-blur-sm" aria-hidden="true" onclick="closeModal()"></div>
+
+        <div class="flex min-h-screen items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-gray-100">
+                <div class="bg-white px-8 pb-8 pt-8 sm:p-10 sm:pb-8">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-left sm:mt-0 sm:w-full">
+                            <h3 class="text-3xl font-bold leading-6 text-gray-900 mb-6 border-b pb-4 flex justify-between items-center" id="modal-title">
+                                <span class="lang-en">Application Details</span>
+                                <span class="lang-zh">招生简章与申请指引</span>
+                                <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 transition text-2xl">&times;</button>
+                            </h3>
+                            <div class="mt-2 space-y-5 text-lg text-gray-600">
+                                <p><strong><span class="lang-en">Target Audience:</span><span class="lang-zh">招生规模与对象:</span></strong> <br>
+                                    <span class="lang-en">Capacity is limited to approximately 60 participants. The primary audience comprises PhD students in Economics, Finance, Computer Science, Mathematics, and contiguous disciplines. Early-career researchers (e.g., post-doctoral fellows and junior faculty) as well as exceptionally qualified master's and undergraduate students are highly encouraged to apply.</span>
+                                    <span class="lang-zh">招生规模约 60 人。主要面向经济学、金融学、计算机科学、数学等相关方向博士生；同时热忱欢迎青年学者（博士后、青年教师）以及具备扎实学术基础的高年级本科生与硕士生申请。</span>
+                                </p>
+                                <p><strong><span class="lang-en">Required Materials:</span><span class="lang-zh">申请材料:</span></strong> <br>
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <span class="lang-en">
+                                            <li>Curriculum Vitae (CV)</li>
+                                            <li>Statement of Purpose (max 1 page)</li>
+                                            <li>Name & email of one potential referee (letters requested only if necessary)</li>
+                                        </span>
+                                        <span class="lang-zh">
+                                            <li>个人简历（CV，建议列明已修读的高级宏观经济学及计算机相关课程）</li>
+                                            <li>个人陈述（Statement of Purpose，不超过 1 页）</li>
+                                            <li>学生申请人请提供一位推荐人的姓名与所在单位邮箱（仅作为备用联系）</li>
+                                        </span>
+                                    </ul>
+                                </p>
+                                <p class="text-red-600 font-bold bg-red-50 p-3 rounded"><strong><span class="lang-en">Deadline:</span><span class="lang-zh">申请截止日期:</span></strong> 
+                                    <span class="lang-en">March 20, 2026</span>
+                                    <span class="lang-zh">2026 年 3 月 20 日</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-8 py-6 sm:flex sm:flex-row-reverse sm:px-10 gap-4 border-t">
+                    <a href="#" class="inline-flex w-full justify-center rounded-lg bg-green-600 px-5 py-3 text-lg font-semibold text-white shadow-sm hover:bg-green-700 sm:w-auto transition">
+                        <span class="lang-en">Apply via WeChat (China)</span>
+                        <span class="lang-zh">国内申请人：填写问卷星/微信</span>
+                    </a>
+                    <a href="#" class="mt-3 inline-flex w-full justify-center rounded-lg bg-blue-600 px-5 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 sm:mt-0 sm:w-auto transition">
+                        <span class="lang-en">Apply via Google Form (Intl)</span>
+                        <span class="lang-zh">国外申请人：填写 Google Form</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+
+        function applyLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const zhElements = document.querySelectorAll('.lang-zh');
+            
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                zhElements.forEach(el => el.style.display = 'none');
+                document.querySelectorAll('p.lang-en, div.lang-en, li.lang-en').forEach(el => el.style.display = 'block');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                zhElements.forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('p.lang-zh, div.lang-zh, li.lang-zh').forEach(el => el.style.display = 'block');
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            applyLanguage();
+        }
+
+        applyLanguage();
+
+        const modal = document.getElementById('applicationModal');
+        
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

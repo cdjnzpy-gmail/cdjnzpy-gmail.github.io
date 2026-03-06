@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference on ML for Macro & Finance 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .lang-zh { display: none; } 
+        .hero-bg-conf {
+            background-image: linear-gradient(rgba(11, 63, 56, 0.85), rgba(11, 63, 56, 0.85)), url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased relative flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-md fixed w-full z-40 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl text-green-800 flex items-center">
+                    <span class="lang-en">ML & Macro Finance Conference</span>
+                    <span class="lang-zh">机器学习与宏观金融学术会议</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-green-700 font-medium text-sm flex items-center transition">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        <span class="lang-en">Back to Summer School</span>
+                        <span class="lang-zh">返回暑期讲习班</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md text-sm font-medium transition duration-150 border border-gray-300">
+                        <span id="lang-btn-text">中文 / English</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-bg-conf text-white pt-36 pb-24 px-4 sm:px-6 lg:px-8 text-center mt-16 border-b-8 border-green-500">
+        <h2 class="text-green-300 font-bold tracking-widest uppercase mb-4 text-sm sm:text-base">
+            <span class="lang-en">Post-Summer School Academic Conference</span>
+            <span class="lang-zh">讲习班同主题学术会议</span>
+        </h2>
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-8 tracking-tight leading-tight max-w-5xl mx-auto">
+            <span class="lang-en">Conference on Machine Learning <br>for Macroeconomics and Finance</span>
+            <span class="lang-zh">机器学习与宏观金融 <br>学术会议</span>
+        </h1>
+        <div class="inline-flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-8 text-lg sm:text-xl font-medium bg-white/10 backdrop-blur-sm py-4 px-8 rounded-full border border-white/20">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span class="lang-en">July 11–12, 2026</span>
+                <span class="lang-zh">2026 年 7 月 11–12 日</span>
+            </div>
+            <div class="hidden sm:block text-gray-400">|</div>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span class="lang-en">Peking University, Beijing</span>
+                <span class="lang-zh">中国，北京（北京大学）</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-12 relative z-10 w-full">
+        
+        <div class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 rounded-xl shadow-lg p-1 border-b-4 border-yellow-600 mb-12 transform hover:-translate-y-1 transition duration-300">
+            <div class="bg-white/90 backdrop-blur rounded-lg px-8 py-6 text-center">
+                <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-2 animate-pulse">
+                    <span class="lang-en">📢 Call for Papers: Coming Soon!</span>
+                    <span class="lang-zh">📢 征稿启事即将发布！</span>
+                </h3>
+                <p class="text-gray-700 font-medium text-lg">
+                    <span class="lang-en">We will shortly announce the official call for papers. Please stay tuned for submission guidelines, deadlines, and keynote speaker announcements.</span>
+                    <span class="lang-zh">我们即将发布正式的征稿启事（Call for Papers）。敬请期待详细的投稿要求、截止日期以及主旨演讲嘉宾阵容。</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100 h-full">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                    <span class="lang-en">Call for Papers</span>
+                    <span class="lang-zh">征稿 (Call for Papers)</span>
+                </h3>
+                <div class="text-gray-600 space-y-3">
+                    <p class="lang-en">We invite submissions of papers related to the intersection of machine learning, macroeconomics, and finance.</p>
+                    <p class="lang-zh">我们热忱欢迎国内外学者提交与“机器学习、宏观经济学与金融学”交叉领域的论文。</p>
+                    <ul class="list-disc pl-5 mt-4 space-y-2 text-sm text-gray-500 font-medium">
+                        <li><span class="lang-en">Submission Portal: </span><span class="lang-zh">投稿通道：</span> <span class="text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded">Opening Soon</span></li>
+                        <li><span class="lang-en">Deadline: </span><span class="lang-zh">截止日期：</span> <span class="text-gray-400">TBA</span></li>
+                        <li><span class="lang-en">Acceptance Notification: </span><span class="lang-zh">录取通知：</span> <span class="text-gray-400">TBA</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100 h-full">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                    <span class="lang-en">Registration</span>
+                    <span class="lang-zh">会议注册</span>
+                </h3>
+                <div class="text-gray-600 space-y-3">
+                    <p class="lang-en">Registration for the conference will open after the paper acceptance notifications are sent out. A registration fee will apply to all attendees (except invited speakers).</p>
+                    <p class="lang-zh">会议注册通道将在论文录取通知发放后开启。本次会议将收取一定的注册费（特邀嘉宾除外）。</p>
+                    <ul class="list-disc pl-5 mt-4 space-y-2 text-sm text-gray-500 font-medium">
+                        <li><span class="lang-en">Registration Portal: </span><span class="lang-zh">注册通道：</span> <span class="text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded">Opening Soon</span></li>
+                        <li><span class="lang-en">Standard Fee: </span><span class="lang-zh">标准注册费：</span> <span class="text-gray-400">TBA</span></li>
+                        <li><span class="lang-en">Student Rate: </span><span class="lang-zh">学生注册费：</span> <span class="text-gray-400">TBA</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                <span class="lang-en">Conference Organizers</span>
+                <span class="lang-zh">会议组织者</span>
+            </h3>
+            <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-24 space-y-8 sm:space-y-0">
+                
+                <a href="https://liboecon.com/" target="_blank" class="block text-center group cursor-pointer transform transition duration-300 hover:-translate-y-2">
+                    <img src="pho/BL.jpg" alt="Bo Li" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover object-top border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-800 group-hover:text-green-700 transition">Bo Li <span class="lang-zh font-normal text-base ml-1">(李博)</span></h4>
+                    <p class="text-gray-500 text-sm mt-1">
+                        <span class="lang-en">Peking University</span>
+                        <span class="lang-zh">北京大学</span>
+                    </p>
+                </a>
+
+                <a href="https://web.stanford.edu/~maliars/" target="_blank" class="block text-center group cursor-pointer transform transition duration-300 hover:-translate-y-2">
+                    <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover object-top border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-800 group-hover:text-green-700 transition">Serguei Maliar</h4>
+                    <p class="text-gray-500 text-sm mt-1">
+                        <span class="lang-en">Santa Clara University</span>
+                        <span class="lang-zh">Santa Clara University</span>
+                    </p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>
+                <span class="lang-en">For inquiries, please contact: </span>
+                <span class="lang-zh">如有疑问，请联系：</span>
+                <a href="mailto:zpyuan@pku.edu.cn" class="text-green-400 hover:text-white transition">zpyuan@pku.edu.cn</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en'; // 默认英文
+
+        function applyLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const zhElements = document.querySelectorAll('.lang-zh');
+            
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                zhElements.forEach(el => el.style.display = 'none');
+                document.querySelectorAll('p.lang-en, div.lang-en, li.lang-en').forEach(el => el.style.display = 'block');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                zhElements.forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('p.lang-zh, div.lang-zh, li.lang-zh').forEach(el => el.style.display = 'block');
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            applyLanguage();
+        }
+
+        applyLanguage();
+    </script>
+</body>
+</html>
