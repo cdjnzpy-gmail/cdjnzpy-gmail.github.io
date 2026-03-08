@@ -8,57 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         @media print {
-        @page {
-            size: A4 portrait; 
-            margin: 0; 
+        @page { size: A4 portrait; margin: 0; }
+        html, body { width: 210mm; height: 297mm; margin: 0; padding: 0; overflow: hidden; }
+        * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
         }
-        html, body {
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; 
-        }
-        * {
-            print-color-adjust: exact;
-            -webkit-print-color-adjust: exact;
-        }
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f3f4f6; 
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; margin: 0; display: flex; justify-content: center; }
         .poster-container {
-            width: 800px;
-            height: 1130px;
-            background-color: #ffffff;
-            position: relative;
-            overflow: hidden;
+            width: 800px; height: 1130px; background-color: #ffffff; position: relative; overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --pku-red: #8C0014;
         }
         .curve-bg {
-            position: absolute;
-            top: -5%;
-            right: -5%;
-            width: 450px;
-            height: 520px;
-            border-bottom-left-radius: 200px;
-            overflow: hidden;
-            border: 16px solid var(--pku-red);
-            z-index: 0;
-            box-shadow: -10px 10px 30px rgba(140, 0, 20, 0.2);
+            position: absolute; top: -5%; right: -5%; width: 450px; height: 520px;
+            border-bottom-left-radius: 200px; overflow: hidden; border: 16px solid var(--pku-red);
+            z-index: 0; box-shadow: -10px 10px 30px rgba(140, 0, 20, 0.2);
         }
-        .curve-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.95;
-            mix-blend-mode: multiply; 
-        }
+        .curve-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.95; mix-blend-mode: multiply; }
     </style>
 </head>
 <body>
@@ -72,10 +37,7 @@
         <div class="absolute top-[-2%] right-[-2%] w-[500px] h-[500px] bg-[#8C0014] rounded-bl-[280px] opacity-10 z-0"></div>
 
         <div class="relative z-10 w-[55%] pt-16 pl-12 pr-4">
-            
-            <h2 class="text-[#8C0014] font-extrabold text-lg tracking-widest uppercase mb-1">
-                PhD Summer School 2026
-            </h2>
+            <h2 class="text-[#8C0014] font-extrabold text-lg tracking-widest uppercase mb-1">PhD Summer School 2026</h2>
             <h1 class="text-[#8C0014] font-black text-[30px] leading-[1.05] uppercase tracking-tight mb-4">
                 Machine <br> Learning <br>For <br> Macroeconomics <br>And Finance
             </h1>
@@ -107,7 +69,6 @@
             <p class="text-[13px] leading-relaxed text-gray-800 font-medium mb-4 pr-2">
                 Following the summer school, attend a two-day conference <strong>(July 11–12)</strong> bringing together leading academics to discuss recent advancements in machine learning and macroeconomics.
             </p>
-
         </div>
 
         <div class="absolute top-[39%] right-[4%] w-[38%] bg-white rounded-[25px] border-[4px] border-[#8C0014] pt-4 pb-3 px-2 shadow-2xl z-20">
@@ -116,61 +77,52 @@
             </div>
 
             <div class="grid grid-cols-2 gap-x-1 gap-y-3 justify-items-center mt-2">
-                
                 <div class="text-center w-full">
                     <img src="pho/WE.jpg" alt="Weinan E" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-[#8C0014] mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Weinan E</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Peking Univ.<br><span class="text-[#8C0014]">(Keynote)</span></p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/GG.png" alt="Goutham Gopalakrishna" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Goutham Gopalakrishna</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Toronto</p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/FK.jpg" alt="Felix Kubler" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Felix Kubler</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Zurich</p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Serguei Maliar</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Santa Clara U</p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/BM.jpg" alt="Benjamin Moll" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Benjamin Moll</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">LSE <span class="text-blue-600">(Online)</span></p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/JP.jpg" alt="Jonathan Payne" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Jonathan Payne</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">Princeton Univ.</p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/SS.png" alt="Simon Scheidegger" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-gray-300 mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Simon Scheidegger</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">HEC Lausanne</p>
                 </div>
-
                 <div class="text-center w-full">
                     <img src="pho/YY.jpg" alt="Yucheng Yang" class="w-[52px] h-[52px] rounded-full mx-auto object-cover object-top border-2 border-[#8C0014] mb-1 shadow-sm">
                     <h4 class="text-[10px] font-extrabold text-gray-900 leading-tight">Yucheng Yang</h4>
                     <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5">U of Zurich</p>
                 </div>
-
             </div>
         </div>
 
         <div class="absolute bottom-12 left-12 right-12 flex justify-between items-end z-10">
             
-            <div class="w-[65%]">
+            <div class="w-[62%]">
                 <h3 class="text-[#8C0014] font-extrabold uppercase text-[15px] mb-3 tracking-wide">Organizing Committee & Hosts</h3>
                 
                 <div class="flex items-center space-x-5 mb-3">
@@ -192,19 +144,37 @@
                 </div>
             </div>
 
-            <div class="w-[30%] flex flex-col items-end text-right">
+            <div class="w-[38%] flex flex-col items-end text-right">
                 <h3 class="text-[#8C0014] font-extrabold uppercase text-[15px] mb-2 tracking-wide">Scan To Apply</h3>
-                <div class="bg-white p-1.5 border-2 border-dashed border-[#8C0014] rounded-lg shadow-sm mb-2 inline-block">
-                    <img src="qr-code.png" alt="QR Code" class="w-[100px] h-[100px] object-cover">
+                
+                <div class="flex space-x-3 mb-2">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-1 border-2 border-[#8C0014] rounded-lg shadow-sm inline-block mb-1">
+                            <img src="pho/app_cn.jpg" alt="Chinese QR Code" class="w-[85px] h-[85px] object-cover rounded-md">
+                        </div>
+                        <div class="bg-[#8C0014] text-white px-3 py-0.5 rounded text-[8.5px] font-bold tracking-widest uppercase">
+                            Chinese
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-1 border-2 border-blue-700 rounded-lg shadow-sm inline-block mb-1">
+                            <img src="pho/app_en.png" alt="International QR Code" class="w-[85px] h-[85px] object-cover rounded-md">
+                        </div>
+                        <div class="bg-blue-700 text-white px-3 py-0.5 rounded text-[8.5px] font-bold tracking-widest uppercase">
+                            International
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[11px] font-bold text-[#8C0014]">Deadline: March 20, 2026</p>
-                <p class="text-[10px] text-gray-500 font-medium leading-tight mt-1">Free of charge for Summer School</p>
+                
+                <p class="text-[11px] font-bold text-[#8C0014] mt-1.5">Deadline: March 30, 2026</p>
+                <p class="text-[10px] text-gray-500 font-medium leading-tight mt-0.5">Free of charge for Summer School</p>
             </div>
 
         </div>
 
         <div class="absolute bottom-0 left-0 w-full bg-[#8C0014] py-2.5 text-center text-white text-[12px] font-bold tracking-widest z-20 shadow-[0_-4px_6px_rgba(0,0,0,0.1)]">
-            VISIT US @ <a href="https://xxxx" class="underline hover:text-gray-200">https://xxxx</a>
+            VISIT US @ <a href="https://smlecon.com" class="underline hover:text-gray-200">https://smlecon.com</a>
         </div>
 
     </div>

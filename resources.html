@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - ISMLE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .lang-zh { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-sm fixed w-full z-50 top-0 border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 font-extrabold text-2xl tracking-tight text-gray-900"><a href="index.html">ISMLE</a></div>
+                <div class="hidden md:flex space-x-10 items-center font-medium text-gray-600">
+                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="events.html" class="hover:text-blue-600 transition">Events</a>
+                    <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                    <a href="agenda.html" class="hover:text-blue-600 transition">Agenda</a>
+                    <a href="resources.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Resources</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="relative group py-4">
+                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full transition">
+                            <span class="lang-en">Language</span><span class="lang-zh">语言</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-0 w-32 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden transform origin-top group-hover:scale-100 scale-95">
+                            <button onclick="setLanguage('en')" class="block w-full text-left px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition">English</button>
+                            <button onclick="setLanguage('zh')" class="block w-full text-left px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition border-t border-gray-50">中文</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-gray-900 focus:outline-none p-2 rounded-md bg-gray-50 hover:bg-gray-100 transition"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center shadow-inner">
+                <a href="index.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Home</a>
+                <a href="events.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Events</a>
+                <a href="about.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">About Us</a>
+                <a href="agenda.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Agenda</a>
+                <a href="resources.html" class="block px-3 py-3 text-blue-600 font-bold bg-blue-50 rounded-xl">Resources</a>
+                <div class="border-t border-gray-100 my-4 pt-4"></div>
+                <p class="text-sm text-gray-400 mb-3"><span class="lang-en">Select Language</span><span class="lang-zh">选择语言</span></p>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="setLanguage('en'); toggleMobileMenu();" class="px-6 py-2.5 bg-gray-100 rounded-full text-sm font-bold text-gray-700 hover:bg-blue-100 hover:text-blue-700 transition">English</button>
+                    <button onclick="setLanguage('zh'); toggleMobileMenu();" class="px-6 py-2.5 bg-gray-100 rounded-full text-sm font-bold text-gray-700 hover:bg-blue-100 hover:text-blue-700 transition">中文</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-32 flex-grow w-full">
+        
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 border-b-4 border-blue-500 pb-4 inline-block">
+            <span class="lang-en">Academic Resources</span><span class="lang-zh">学术资源与代码库</span>
+        </h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-10 md:p-14 shadow-2xl relative overflow-hidden group hover:shadow-blue-900/50 transition duration-500">
+                <div class="absolute -right-10 -top-10 text-white opacity-5 text-[150px] transform rotate-12 group-hover:rotate-6 transition duration-700">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-64 h-64"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                </div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-blue-500 text-white p-3 rounded-2xl shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h2 class="text-4xl font-extrabold tracking-tight">EconGym</h2>
+                    </div>
+                    
+                    <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-8">
+                        <span class="lang-en">An open-source reinforcement learning environment tailored specifically for structural economic models. EcoGym empowers researchers to apply cutting-edge RL algorithms to macroeconomics seamlessly.</span>
+                        <span class="lang-zh">专为结构化经济模型量身定制的开源强化学习环境。EconGym 赋能研究人员将最前沿的 RL 算法无缝应用于宏观经济学中。</span>
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-4 py-1.5 bg-gray-700 text-blue-300 text-sm font-bold rounded-full">Python</span>
+                        <span class="px-4 py-1.5 bg-gray-700 text-green-300 text-sm font-bold rounded-full">Reinforcement Learning</span>
+                        <span class="px-4 py-1.5 bg-gray-700 text-yellow-300 text-sm font-bold rounded-full">Open Source</span>
+                    </div>
+                    
+                    <a href="https://github.com/Miracle1207/EconGym" target="_blank" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg w-full sm:w-auto">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        <span class="lang-en">View on GitHub</span><span class="lang-zh">前往 GitHub 查看</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-dashed border-gray-300 rounded-3xl p-10 md:p-14 flex flex-col items-center justify-center text-center">
+                <div class="text-gray-300 mb-6">
+                    <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4"><span class="lang-en">More Resources Coming Soon</span><span class="lang-zh">更多资源，敬请期待</span></h3>
+                <p class="text-gray-500 text-lg max-w-sm">
+                    <span class="lang-en">Lecture notes, datasets, and tutorial videos from our past events will be posted here over time.</span>
+                    <span class="lang-zh">我们往期活动的讲义、相关数据集与教程录像将陆续在此发布。</span>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm mt-auto border-t border-gray-800">
+        <p>&copy; 2026 International Society for Machine Learning in Economics. All rights reserved.</p>
+        <p class="mt-3 font-medium"><span class="lang-en">Contact us:</span><span class="lang-zh">联系我们：</span><a href="mailto:conference@smle.com" class="text-blue-400 hover:text-white transition underline">conference@smle.com</a></p>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        function setLanguage(lang) { currentLang = lang; applyLanguage(); }
+        function applyLanguage() {
+            const enElements = document.querySelectorAll('.lang-en'); const zhElements = document.querySelectorAll('.lang-zh');
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'inline-block'); zhElements.forEach(el => el.style.display = 'none');
+                document.querySelectorAll('p.lang-en, div.lang-en, li.lang-en').forEach(el => el.style.display = 'block');
+            } else {
+                enElements.forEach(el => el.style.display = 'none'); zhElements.forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('p.lang-zh, div.lang-zh, li.lang-zh').forEach(el => el.style.display = 'block');
+            }
+        }
+        applyLanguage();
+    </script>
+</body>
+</html>
