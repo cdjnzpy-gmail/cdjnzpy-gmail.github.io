@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda - ISMLE</title>
+    <title>Agenda - SMLE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
@@ -16,12 +16,12 @@
     <nav class="bg-white shadow-sm fixed w-full z-50 top-0 border-b border-gray-100">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 font-extrabold text-2xl tracking-tight text-gray-900"><a href="index.html">ISMLE</a></div>
+                <div class="flex-shrink-0 font-extrabold text-2xl tracking-tight text-gray-900"><a href="index.html">SMLE</a></div>
                 <div class="hidden md:flex space-x-10 items-center font-medium text-gray-600">
-                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                    <a href="events.html" class="hover:text-blue-600 transition">Events</a>
+                    <a href="home.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="index.html" class="hover:text-blue-600 transition">Events</a>
                     <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
-                    <a href="agenda.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Agenda</a>
+                    <a href="agenda.html" class="text-blue-600 font-bold">Agenda</a>
                     <a href="resources.html" class="hover:text-blue-600 transition">Resources</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
@@ -44,8 +44,8 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
             <div class="px-4 pt-2 pb-6 space-y-2 text-center shadow-inner">
-                <a href="index.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Home</a>
-                <a href="events.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Events</a>
+                <a href="home.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Home</a>
+                <a href="index.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Events</a>
                 <a href="about.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">About Us</a>
                 <a href="agenda.html" class="block px-3 py-3 text-blue-600 font-bold bg-blue-50 rounded-xl">Agenda</a>
                 <a href="resources.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Resources</a>
@@ -100,25 +100,56 @@
     </div>
 
     <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm mt-auto border-t border-gray-800">
-        <p>&copy; 2026 International Society for Machine Learning in Economics. All rights reserved.</p>
-        <p class="mt-3 font-medium"><span class="lang-en">Contact us:</span><span class="lang-zh">联系我们：</span><a href="mailto:conference@smle.com" class="text-blue-400 hover:text-white transition underline">conference@smle.com</a></p>
+        <p>&copy; 2026 Society for Machine Learning in Economics. All rights reserved.</p>
+        <p class="mt-3 font-medium"><span class="lang-en">Contact us:</span><span class="lang-zh">联系我们：</span><a href="mailto:xx@xx.com" class="text-blue-400 hover:text-white transition underline">xx@xx.com</a></p>
     </footer>
 
     <script>
-        let currentLang = 'en';
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
-        function setLanguage(lang) { currentLang = lang; applyLanguage(); }
-        function applyLanguage() {
-            const enElements = document.querySelectorAll('.lang-en'); const zhElements = document.querySelectorAll('.lang-zh');
-            if (currentLang === 'en') {
-                enElements.forEach(el => el.style.display = 'inline-block'); zhElements.forEach(el => el.style.display = 'none');
-                document.querySelectorAll('p.lang-en, div.lang-en, li.lang-en').forEach(el => el.style.display = 'block');
-            } else {
-                enElements.forEach(el => el.style.display = 'none'); zhElements.forEach(el => el.style.display = 'inline-block');
-                document.querySelectorAll('p.lang-zh, div.lang-zh, li.lang-zh').forEach(el => el.style.display = 'block');
+        let currentLang = localStorage.getItem('siteLanguage') || 'en';
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
             }
         }
-        applyLanguage();
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('siteLanguage', lang);
+            applyLanguage();
+        }
+
+        function applyLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const zhElements = document.querySelectorAll('.lang-zh');
+
+            if (currentLang === 'en') {
+                enElements.forEach(el => {
+                    if (['P', 'DIV', 'LI', 'SECTION', 'H1', 'H2', 'H3', 'H4'].includes(el.tagName)) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'inline';
+                    }
+                });
+                zhElements.forEach(el => el.style.display = 'none');
+                document.documentElement.lang = 'en';
+            } else {
+                zhElements.forEach(el => {
+                    if (['P', 'DIV', 'LI', 'SECTION', 'H1', 'H2', 'H3', 'H4'].includes(el.tagName)) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'inline';
+                    }
+                });
+                enElements.forEach(el => el.style.display = 'none');
+                document.documentElement.lang = 'zh';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            applyLanguage();
+        });
     </script>
 </body>
 </html>

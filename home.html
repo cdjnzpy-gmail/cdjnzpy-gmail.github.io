@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SMLE</title>
+    <title>Home - SMLE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
@@ -16,18 +16,24 @@
     <nav class="bg-white shadow-sm fixed w-full z-50 top-0 border-b border-gray-100">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 font-extrabold text-2xl tracking-tight text-gray-900"><a href="index.html">SMLE</a></div>
+                
+                <div class="flex-shrink-0 font-extrabold text-2xl tracking-tight text-gray-900">
+                    <a href="index.html">SMLE</a>
+                </div>
+                
                 <div class="hidden md:flex space-x-10 items-center font-medium text-gray-600">
-                    <a href="home.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="home.html" class="text-blue-600 font-bold">Home</a>
                     <a href="index.html" class="hover:text-blue-600 transition">Events</a>
-                    <a href="about.html" class="text-blue-600 font-bold">About Us</a>
+                    <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
                     <a href="agenda.html" class="hover:text-blue-600 transition">Agenda</a>
                     <a href="resources.html" class="hover:text-blue-600 transition">Resources</a>
                 </div>
+                
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="relative group py-4">
                         <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full transition">
-                            <span class="lang-en">Language</span><span class="lang-zh">语言</span>
+                            <span class="lang-en">Language</span>
+                            <span class="lang-zh">语言</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="absolute right-0 top-full mt-0 w-32 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden transform origin-top group-hover:scale-100 scale-95">
@@ -36,19 +42,23 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex md:hidden items-center">
                     <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-gray-900 focus:outline-none p-2 rounded-md bg-gray-50 hover:bg-gray-100 transition">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
                     </button>
                 </div>
+
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
             <div class="px-4 pt-2 pb-6 space-y-2 text-center shadow-inner">
-                <a href="home.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Home</a>
+                <a href="home.html" class="block px-3 py-3 text-blue-600 font-bold bg-blue-50 rounded-xl">Home</a>
                 <a href="index.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Events</a>
-                <a href="about.html" class="block px-3 py-3 text-blue-600 font-bold bg-blue-50 rounded-xl">About Us</a>
+                <a href="about.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">About Us</a>
                 <a href="agenda.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Agenda</a>
                 <a href="resources.html" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-xl transition">Resources</a>
                 <div class="border-t border-gray-100 my-4 pt-4"></div>
@@ -61,52 +71,38 @@
         </div>
     </nav>
 
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-32 flex-grow w-full">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 border-b-4 border-blue-500 pb-4 inline-block">
-            <span class="lang-en">About Us</span><span class="lang-zh">关于我们</span>
-        </h1>
-        
-        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 mb-16 relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-            <h2 class="text-3xl font-bold mb-6 text-gray-900 relative z-10"><span class="lang-en">Our Mission</span><span class="lang-zh">协会使命</span></h2>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-light relative z-10 max-w-5xl">
-                <span class="lang-en">We bridge the gap between advanced computational techniques and structural economic modeling. Our society provides an elite environment for researchers to develop innovative methodologies and tackle global challenges with data-driven precision.</span>
-                <span class="lang-zh">我们致力于连接前沿计算技术与结构化经济建模。本协会旨在为研究人员提供一个精英化的学术环境，以开发创新方法论，并以数据驱动的精准性应对全球性经济挑战。</span>
-            </p>
-        </div>
-
-        <h2 class="text-3xl font-bold text-gray-900 mb-10 border-l-4 border-blue-600 pl-4"><span class="lang-en">SMLE Officers</span><span class="lang-zh">协会核心成员</span></h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl">
-            
-            <a href="https://web.stanford.edu/~maliars/" target="_blank" class="block bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
-                <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-36 h-36 rounded-full mx-auto mb-6 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-md">
-                <h3 class="font-bold text-2xl text-gray-900 group-hover:text-blue-700 transition mb-2">Serguei Maliar</h3>
-                <div class="inline-block bg-blue-50 text-blue-700 font-bold px-4 py-1 rounded-full text-sm mb-3">
-                    <span class="lang-en">Founding Officer</span><span class="lang-zh">创始成员 (Founding Officer)</span>
+    <div class="bg-white w-full pt-32 pb-16 md:pb-20 mt-16 border-b border-gray-200">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 pr-0 md:pr-16 mb-10 md:mb-0">
+                <div class="inline-block bg-blue-50 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm mb-6 tracking-wide border border-blue-100">
+                    <span class="lang-en">Academic Society</span>
+                    <span class="lang-zh">国际学术协会</span>
                 </div>
-                <p class="text-gray-500 font-medium">
-                    <span class="lang-en">Santa Clara University</span><span class="lang-zh">Santa Clara University</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight text-gray-900 leading-tight">
+                    <span class="lang-en">Society for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Machine Learning</span> in Economics</span>
+                    <span class="lang-zh">国际机器学习与经济学协会</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 font-light leading-relaxed">
+                    <span class="lang-en">Bridging the gap between advanced computational techniques and structural economic modeling with data-driven precision.</span>
+                    <span class="lang-zh">致力于连接前沿计算技术与结构化经济建模，打造顶尖的跨学科学术环境。</span>
                 </p>
-            </a>
-
-            <a href="https://liboecon.com/" target="_blank" class="block bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transform transition duration-300 cursor-pointer text-center group">
-                <img src="pho/BL.jpg" alt="Bo Li" class="w-36 h-36 rounded-full mx-auto mb-6 object-cover object-top border-4 border-gray-50 group-hover:border-blue-100 transition shadow-md">
-                <h3 class="font-bold text-2xl text-gray-900 group-hover:text-blue-700 transition mb-2">Bo Li <span class="lang-zh font-normal text-lg ml-1">(李博)</span></h3>
-                <div class="inline-block bg-indigo-50 text-indigo-700 font-bold px-4 py-1 rounded-full text-sm mb-3">
-                    <span class="lang-en">Managing Officer</span><span class="lang-zh">执行成员 (Managing Officer)</span>
-                </div>
-                <p class="text-gray-500 font-medium">
-                    <span class="lang-en">Peking University</span><span class="lang-zh">北京大学</span>
-                </p>
-            </a>
+                <a href="about.html" class="inline-block bg-gray-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-gray-800 transition shadow-lg w-full md:w-auto text-center">
+                    <span class="lang-en">Discover More</span>
+                    <span class="lang-zh">了解更多</span>
+                </a>
+            </div>
+            <div class="md:w-1/2 w-full">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Data and Economics" class="rounded-3xl shadow-2xl object-cover h-[300px] md:h-[450px] w-full">
+            </div>
         </div>
     </div>
+
 
     <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm mt-auto border-t border-gray-800">
         <p>&copy; 2026 Society for Machine Learning in Economics. All rights reserved.</p>
         <p class="mt-3 font-medium">
-            <span class="lang-en">Contact us:</span><span class="lang-zh">联系我们：</span>
+            <span class="lang-en">Contact us:</span>
+            <span class="lang-zh">联系我们：</span>
             <a href="mailto:xx@xx.com" class="text-blue-400 hover:text-white transition underline">xx@xx.com</a>
         </p>
     </footer>
