@@ -14,24 +14,170 @@
             background-size: cover;
             background-position: center;
         }
+        .card-lift { transition: transform 0.28s ease, box-shadow 0.28s ease; }
+        .card-lift:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(17, 24, 39, 0.12); }
+        .info-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            padding: 0.6rem 1rem;
+            font-weight: 600;
+        }
+        .track-card {
+            border: 1px solid #dbeafe;
+            border-radius: 1rem;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .track-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(30, 64, 175, 0.12);
+            border-color: #93c5fd;
+        }
+        .track-1 { background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
+        .track-2 { background: linear-gradient(135deg, #ecfeff 0%, #ffffff 100%); }
+        .track-3 { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); }
+        .track-4 { background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%); }
+        .track-5 { background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); }
+        .track-num {
+            position: absolute;
+            right: 0.75rem;
+            top: 0.2rem;
+            font-size: 2.3rem;
+            line-height: 1;
+            font-weight: 800;
+            color: rgba(30, 64, 175, 0.12);
+            pointer-events: none;
+        }
+        .track-accent {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            border-radius: 1rem 0 0 1rem;
+            opacity: 0.9;
+        }
+        .track-head {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.45rem;
+        }
+        .track-divider {
+            height: 2px;
+            width: 75%;
+            border-radius: 999px;
+            margin: 0.35rem 0 0.6rem;
+            background: linear-gradient(90deg, rgba(37, 99, 235, 0.75) 0%, rgba(125, 211, 252, 0.45) 100%);
+        }
+        .track-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+        .track-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            color: #334155;
+        }
+        .date-timeline {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+        .date-timeline::before {
+            content: "";
+            position: absolute;
+            left: 0.4rem;
+            top: 0.75rem;
+            bottom: 0.75rem;
+            width: 2px;
+            background: #86efac;
+        }
+        .date-item {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #bbf7d0;
+            border-radius: 1rem;
+            padding: 0.9rem 1rem;
+        }
+        .date-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            left: -1.46rem;
+            top: 1.2rem;
+            background: #22c55e;
+            border: 2px solid #dcfce7;
+        }
+        .date-stepper-line {
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 50%;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #86efac 0%, #4ade80 45%, #f97316 55%, #86efac 100%);
+            transform: translateY(-50%);
+            box-shadow: 0 0 22px rgba(34, 197, 94, 0.3);
+        }
+        .step-card {
+            position: relative;
+            z-index: 1;
+            background: #ffffff;
+            border: 1px solid #bbf7d0;
+            border-radius: 1rem;
+            padding: 0.9rem;
+            min-height: 132px;
+        }
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            background: #22c55e;
+            margin: 0 auto 0.6rem;
+            box-shadow: 0 0 0 4px #dcfce7;
+        }
+        .step-card.highlight {
+            border-color: #fdba74;
+            background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+            transform: scale(1.03);
+            box-shadow: 0 16px 32px rgba(249, 115, 22, 0.2);
+        }
+        .step-card.highlight .step-dot {
+            background: #ea580c;
+            box-shadow: 0 0 0 4px #fed7aa;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased relative flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 antialiased relative flex flex-col min-h-screen overflow-x-hidden">
 
     <nav class="bg-white shadow-md fixed w-full z-40 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 font-bold text-xl text-green-800 flex items-center">
+                <div class="flex-shrink-0 font-bold text-sm sm:text-base lg:text-xl text-green-800 flex items-center max-w-[58vw] sm:max-w-none leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                     <span class="lang-en">2026 Conference on Machine Learning in Economics</span>
                     <span class="lang-zh">2026 机器学习与经济学会议</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-600 hover:text-green-700 font-medium text-sm flex items-center transition">
+                    <a href="index.html" class="text-gray-600 hover:text-green-700 font-medium text-xs sm:text-sm flex items-center transition">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                         <span class="lang-en">Back</span>
                         <span class="lang-zh">返回</span>
                     </a>
-                    <button onclick="toggleLanguage()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md text-sm font-medium transition duration-150 border border-gray-300">
+                    <button onclick="toggleLanguage()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition duration-150 border border-gray-300">
                         <span id="lang-btn-text">中文 / English</span>
                     </button>
                 </div>
@@ -39,49 +185,96 @@
         </div>
     </nav>
 
-    <div class="hero-bg-conf text-white pt-36 pb-24 px-4 sm:px-6 lg:px-8 text-center mt-16 border-b-8 border-green-500">
-        <h2 class="text-green-300 font-bold tracking-widest uppercase mb-4 text-sm sm:text-base">
+    <div class="hero-bg-conf text-white pt-24 sm:pt-32 pb-14 sm:pb-20 px-4 sm:px-6 lg:px-8 text-center mt-16 border-b-8 border-green-500 relative overflow-hidden">
+        <div class="absolute -top-14 -right-12 w-56 h-56 rounded-full bg-green-300/20 blur-3xl"></div>
+        <div class="absolute -bottom-16 -left-10 w-64 h-64 rounded-full bg-teal-200/15 blur-3xl"></div>
+        <h2 class="relative text-green-200 font-bold tracking-widest uppercase mb-4 text-sm sm:text-base">
             <span class="lang-en">Call for Papers</span>
             <span class="lang-zh">征稿启事</span>
         </h2>
-        <h1 class="text-4xl sm:text-6xl font-extrabold mb-8 tracking-tight leading-tight max-w-5xl mx-auto">
+        <h1 class="relative text-3xl sm:text-6xl font-extrabold mb-8 tracking-tight leading-tight max-w-5xl mx-auto">
             <span class="lang-en">2026 SMLE Annual Conference: <br>Machine Learning in Economics</span>
             <span class="lang-zh">2026 SMLE 年度会议：<br>机器学习在经济学中的应用</span>
         </h1>
-        <div class="inline-flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-8 text-lg sm:text-xl font-medium bg-white/10 backdrop-blur-sm py-4 px-8 rounded-full border border-white/20">
-            <div class="flex items-center">
-                <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        <div class="relative flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-8 text-sm sm:text-base">
+            <div class="info-chip">
+                <svg class="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 <span class="lang-en">July 11–12, 2026</span>
                 <span class="lang-zh">2026 年 7 月 11–12 日</span>
             </div>
-            <div class="hidden sm:block text-gray-400">|</div>
-            <div class="flex items-center">
-                <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+            <div class="info-chip">
+                <svg class="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
                 <span class="lang-en">PKU, Beijing & Online</span>
                 <span class="lang-zh">北京大学 & 线上</span>
             </div>
+            <div class="info-chip">
+                <svg class="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h6m-8 8h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span class="lang-en">Conference Language: English</span>
+                <span class="lang-zh">会议语言：英文</span>
+            </div>
+        </div>
+        <div class="relative">
+            <a href="mailto:smleconference@gmail.com" class="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition shadow-xl">
+                <span class="lang-en">Submit by Email</span>
+                <span class="lang-zh">邮箱投稿</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+            </a>
         </div>
     </div>
 
-    <div class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-12 relative z-10 w-full">
-        
-        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 mb-12">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><span class="lang-en">Overview</span><span class="lang-zh">会议概述</span></h3>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+    <div class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10 w-full">
+        <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 border border-gray-100 mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-5 border-b border-green-100 pb-3">
+                <span class="lang-en">Overview</span><span class="lang-zh">会议概述</span>
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
                 <span class="lang-en">The Society for Machine Learning in Economics (SMLE) is pleased to announce its 2026 Annual Conference. We invite submissions of high-quality research papers at the intersection of machine learning, computational methods, and economic theory. The conference aims to foster dialogue between academic researchers, central bank economists, and industry data scientists to advance the frontier of economic modeling.</span>
                 <span class="lang-zh">机器学习与经济学协会 (SMLE) 很高兴地宣布其 2026 年度会议。我们诚邀处于机器学习、计算方法与经济学理论交叉领域的高质量研究论文投稿。本次会议旨在促进学术界研究员、央行经济学家与工业界数据科学家之间的对话，共同推进经济建模的前沿发展。</span>
             </p>
-
-            <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2 mt-10"><span class="lang-en">Keynote Speakers</span><span class="lang-zh">主旨演讲嘉宾</span></h3>
-            <ul class="list-disc pl-5 space-y-2 text-lg text-gray-700">
-                <li><span class="lang-en"><strong>Xiaotie Deng</strong>, PKU</span><span class="lang-zh"><strong>邓小铁</strong>, 北京大学</span></li>
-                <li><span class="lang-en"><strong>[Name]</strong>, University/Institution</span><span class="lang-zh"><strong>[姓名]</strong>, [大学/机构]</span></li>
-            </ul>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            
-            <div class="bg-blue-50 rounded-xl shadow-md p-8 border border-blue-100 h-full">
+        <section class="mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b border-green-100 pb-3">
+                <span class="lang-en">Conference Co-Organizers</span><span class="lang-zh">会议组织者</span>
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://sites.google.com/site/fkubler/" target="_blank" class="card-lift block bg-white p-6 rounded-2xl border border-gray-100 text-center group">
+                    <img src="pho/FK.jpg" alt="Felix Kubler" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-4 border-gray-50 group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-900 mb-1">Felix Kubler</h4>
+                    <p class="text-sm text-gray-500 mb-3">University of Zurich</p>
+                    <span class="inline-flex items-center text-green-700 bg-green-50 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span class="lang-en">Homepage</span><span class="lang-zh">个人主页</span>
+                    </span>
+                </a>
+                <a href="https://liboecon.com/" target="_blank" class="card-lift block bg-white p-6 rounded-2xl border border-gray-100 text-center group">
+                    <img src="pho/BL.jpg" alt="Bo Li" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-900 mb-1">Bo Li</h4>
+                    <p class="text-sm text-gray-500 mb-3">Peking University</p>
+                    <span class="inline-flex items-center text-green-700 bg-green-50 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span class="lang-en">Homepage</span><span class="lang-zh">个人主页</span>
+                    </span>
+                </a>
+                <a href="https://web.stanford.edu/~maliars/" target="_blank" class="card-lift block bg-white p-6 rounded-2xl border border-gray-100 text-center group">
+                    <img src="pho/SM.jpg" alt="Serguei Maliar" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-900 mb-1">Serguei Maliar</h4>
+                    <p class="text-sm text-gray-500 mb-3">Santa Clara University</p>
+                    <span class="inline-flex items-center text-green-700 bg-green-50 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span class="lang-en">Homepage</span><span class="lang-zh">个人主页</span>
+                    </span>
+                </a>
+                <a href="https://sites.google.com/site/yangyucheng1993/home" target="_blank" class="card-lift block bg-white p-6 rounded-2xl border border-gray-100 text-center group">
+                    <img src="pho/YY.jpg" alt="Yucheng Yang" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover object-top border-4 border-gray-50 group-hover:border-green-100 transition">
+                    <h4 class="font-bold text-xl text-gray-900 mb-1">Yucheng Yang</h4>
+                    <p class="text-sm text-gray-500 mb-3">University of Zurich</p>
+                    <span class="inline-flex items-center text-green-700 bg-green-50 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span class="lang-en">Homepage</span><span class="lang-zh">个人主页</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <div class="mb-8">
+            <div class="bg-blue-50 rounded-2xl shadow-md p-8 border border-blue-100">
                 <h3 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     <span class="lang-en">Research Tracks</span><span class="lang-zh">征稿主题方向</span>
@@ -89,66 +282,236 @@
                 <div class="text-blue-800 space-y-4">
                     <p class="lang-en font-medium">We welcome submissions in, but not limited to, the following areas:</p>
                     <p class="lang-zh font-medium">我们欢迎（但不限于）以下领域的论文投稿：</p>
-                    <ul class="space-y-3 text-sm">
-                        <li class="bg-white p-3 rounded shadow-sm"><strong>Computational Macroeconomics:</strong> Deep learning applications for analyzing DSGE and heterogeneous agent models.</li>
-                        <li class="bg-white p-3 rounded shadow-sm"><strong>Machine Learning in Econometrics:</strong> High-dimensional inference, causal machine learning, and non-parametric estimation.</li>
-                        <li class="bg-white p-3 rounded shadow-sm"><strong>Market Design & AI:</strong> Algorithmic pricing, mechanism design, and automated market makers.</li>
-                        <li class="bg-white p-3 rounded shadow-sm"><strong>Reinforcement Learning in Economics:</strong> RL for policy design and agent-based modeling.</li>
-                        <li class="bg-white p-3 rounded shadow-sm"><strong>Natural Language Processing:</strong> LLMs for economic modeling, central bank communications and sentiment analysis.</li>
-                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="track-card track-1">
+                            <span class="track-accent bg-blue-400"></span>
+                            <span class="track-num">01</span>
+                            <div class="track-head">
+                                <p class="text-lg font-bold text-blue-900">Computational Macroeconomics</p>
+                            </div>
+                            <div class="track-divider"></div>
+                            <p class="text-sm text-blue-700 leading-relaxed">Deep learning applications for analyzing DSGE and heterogeneous agent models.</p>
+                            <div class="track-tags">
+                                <span class="track-tag">DSGE</span>
+                                <span class="track-tag">HANK</span>
+                                <span class="track-tag">Deep Learning</span>
+                            </div>
+                        </div>
+                        <div class="track-card track-2">
+                            <span class="track-accent bg-cyan-400"></span>
+                            <span class="track-num">02</span>
+                            <div class="track-head">
+                                <p class="text-lg font-bold text-blue-900">Machine Learning in Econometrics</p>
+                            </div>
+                            <div class="track-divider"></div>
+                            <p class="text-sm text-blue-700 leading-relaxed">High-dimensional inference, causal machine learning, and non-parametric estimation.</p>
+                            <div class="track-tags">
+                                <span class="track-tag">Causal ML</span>
+                                <span class="track-tag">Inference</span>
+                                <span class="track-tag">Non-Parametric</span>
+                            </div>
+                        </div>
+                        <div class="track-card track-3">
+                            <span class="track-accent bg-emerald-400"></span>
+                            <span class="track-num">03</span>
+                            <div class="track-head">
+                                <p class="text-lg font-bold text-blue-900">Market Design & AI</p>
+                            </div>
+                            <div class="track-divider"></div>
+                            <p class="text-sm text-blue-700 leading-relaxed">Algorithmic pricing, mechanism design, and automated market makers.</p>
+                            <div class="track-tags">
+                                <span class="track-tag">Mechanism Design</span>
+                                <span class="track-tag">Pricing</span>
+                                <span class="track-tag">AMM</span>
+                            </div>
+                        </div>
+                        <div class="track-card track-4">
+                            <span class="track-accent bg-fuchsia-400"></span>
+                            <span class="track-num">04</span>
+                            <div class="track-head">
+                                <p class="text-lg font-bold text-blue-900">Reinforcement Learning in Economics</p>
+                            </div>
+                            <div class="track-divider"></div>
+                            <p class="text-sm text-blue-700 leading-relaxed">RL for policy design and agent-based modeling.</p>
+                            <div class="track-tags">
+                                <span class="track-tag">Policy Design</span>
+                                <span class="track-tag">RL</span>
+                                <span class="track-tag">Agents</span>
+                            </div>
+                        </div>
+                        <div class="track-card track-5 md:col-span-2">
+                            <span class="track-accent bg-orange-300"></span>
+                            <span class="track-num">05</span>
+                            <div class="track-head">
+                                <p class="text-lg font-bold text-blue-900">Natural Language Processing</p>
+                            </div>
+                            <div class="track-divider"></div>
+                            <p class="text-sm text-blue-700 leading-relaxed">LLMs for economic modeling, central bank communications, and sentiment analysis.</p>
+                            <div class="track-tags">
+                                <span class="track-tag">LLMs</span>
+                                <span class="track-tag">Sentiment</span>
+                                <span class="track-tag">Central Bank Text</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-green-50 rounded-xl shadow-md p-8 border border-green-100 h-full flex flex-col justify-between">
+        <div class="mb-12">
+            <div class="bg-green-50 rounded-2xl shadow-md p-8 border border-green-100">
                 <div>
                     <h3 class="text-2xl font-bold text-green-900 mb-6 flex items-center">
                         <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <span class="lang-en">Important Dates</span><span class="lang-zh">重要日期</span>
                     </h3>
-                    <ul class="space-y-4 text-green-800 font-medium">
-                        <li class="flex justify-between border-b border-green-200 pb-2">
-                            <span class="lang-en">Portal Opens:</span><span class="lang-zh">投稿系统开放:</span>
-                            <span class="font-bold">March 15, 2026</span>
-                        </li>
-                        <li class="flex justify-between border-b border-green-200 pb-2 text-red-600">
-                            <span class="lang-en">Submission Deadline:</span><span class="lang-zh">截止日期:</span>
-                            <span class="font-bold">May 1, 2026</span>
-                        </li>
-                        <li class="flex justify-between border-b border-green-200 pb-2">
-                            <span class="lang-en">Decisions:</span><span class="lang-zh">录取通知:</span>
-                            <span class="font-bold">May 15, 2026</span>
-                        </li>
-                        <li class="flex justify-between border-b border-green-200 pb-2">
-                            <span class="lang-en">Reg. Deadline:</span><span class="lang-zh">注册截止:</span>
-                            <span class="font-bold">June 1, 2026</span>
-                        </li>
-                    </ul>
+                    <div class="hidden lg:block relative mb-6">
+                        <div class="date-stepper-line"></div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="step-card text-center">
+                                <div class="step-dot"></div>
+                                <p class="text-sm text-green-700 font-semibold"><span class="lang-en">Submission Opens</span><span class="lang-zh">投稿开放</span></p>
+                                <p class="text-xs text-gray-500 mt-1"><span class="lang-en">Email</span><span class="lang-zh">邮箱通道</span></p>
+                                <p class="text-base font-extrabold text-green-900 mt-2">Mar 15</p>
+                            </div>
+                            <div class="step-card highlight text-center">
+                                <div class="step-dot"></div>
+                                <p class="text-sm text-orange-700 font-semibold"><span class="lang-en">Submission Deadline</span><span class="lang-zh">投稿截止</span></p>
+                                <p class="text-xs text-orange-500 mt-1"><span class="lang-en">Action Needed</span><span class="lang-zh">请优先关注</span></p>
+                                <p class="text-base font-extrabold text-orange-800 mt-2">May 1</p>
+                            </div>
+                            <div class="step-card text-center">
+                                <div class="step-dot"></div>
+                                <p class="text-sm text-green-700 font-semibold"><span class="lang-en">Decision Notification</span><span class="lang-zh">录取通知</span></p>
+                                <p class="text-xs text-gray-500 mt-1"><span class="lang-en">By Email</span><span class="lang-zh">邮件通知</span></p>
+                                <p class="text-base font-extrabold text-green-900 mt-2">May 24</p>
+                            </div>
+                            <div class="step-card text-center">
+                                <div class="step-dot"></div>
+                                <p class="text-sm text-green-700 font-semibold"><span class="lang-en">Early Registration</span><span class="lang-zh">早鸟注册</span></p>
+                                <p class="text-xs text-gray-500 mt-1"><span class="lang-en">Early-Bird Ends</span><span class="lang-zh">早鸟截止</span></p>
+                                <p class="text-base font-extrabold text-green-900 mt-2">Jun 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date-timeline lg:hidden space-y-4 text-green-800 font-medium">
+                        <div class="date-item">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-sm text-green-700">
+                                        <span class="lang-en">Email Submission Opens</span><span class="lang-zh">邮箱投稿开放</span>
+                                    </p>
+                                </div>
+                                <div class="text-right bg-green-50 text-green-800 px-3 py-1 rounded-lg border border-green-200 sm:min-w-[138px]">
+                                    <p class="text-xs uppercase tracking-wider">Date</p>
+                                    <p class="text-base font-extrabold">Mar 15, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-item border-red-200 bg-red-50/40">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-sm text-red-700 font-semibold">
+                                        <span class="lang-en">Submission Deadline</span><span class="lang-zh">截止日期</span>
+                                    </p>
+                                    <p class="text-xs text-red-500 mt-1">
+                                        <span class="lang-en">Final day for paper submission</span><span class="lang-zh">论文提交最后一天</span>
+                                    </p>
+                                </div>
+                                <div class="text-right bg-red-100 text-red-800 px-3 py-1 rounded-lg border border-red-200 sm:min-w-[138px]">
+                                    <p class="text-xs uppercase tracking-wider">Deadline</p>
+                                    <p class="text-base font-extrabold">May 1, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-item">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-sm text-green-700">
+                                        <span class="lang-en">Decision Notification</span><span class="lang-zh">录取通知</span>
+                                    </p>
+                                </div>
+                                <div class="text-right bg-green-50 text-green-800 px-3 py-1 rounded-lg border border-green-200 sm:min-w-[138px]">
+                                    <p class="text-xs uppercase tracking-wider">Date</p>
+                                    <p class="text-base font-extrabold">May 24, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-item">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-sm text-green-700">
+                                        <span class="lang-en">Early Registration Deadline</span><span class="lang-zh">早鸟注册截止</span>
+                                    </p>
+                                </div>
+                                <div class="text-right bg-green-50 text-green-800 px-3 py-1 rounded-lg border border-green-200 sm:min-w-[138px]">
+                                    <p class="text-xs uppercase tracking-wider">Date</p>
+                                    <p class="text-base font-extrabold">Jun 1, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="mt-8">
+                <div class="mt-8 bg-white p-4 rounded-xl border border-green-100">
                     <h4 class="font-bold text-green-900 mb-2"><span class="lang-en">Submission Guidelines</span><span class="lang-zh">投稿要求</span></h4>
-                    <p class="text-green-800 text-sm bg-white p-3 rounded shadow-sm">
-                        <span class="lang-en">Submissions must be full research papers or highly detailed extended abstracts (minimum 1,000 words).</span>
-                        <span class="lang-zh">投稿必须为完整的研究论文，或包含高度细节的长摘要（不少于1000词）。</span>
+                    <p class="text-green-800 text-sm">
+                        <span class="lang-en">Submissions must be full research papers or highly detailed extended abstracts (minimum 1,000 words), sent by email to smleconference@gmail.com.</span>
+                        <span class="lang-zh">投稿必须为完整的研究论文，或包含高度细节的长摘要（不少于1000词），并通过邮箱 smleconference@gmail.com 提交。</span>
                     </p>
                 </div>
             </div>
-
         </div>
 
-        <div class="bg-gray-800 text-white rounded-xl p-8 text-center shadow-lg">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 mb-12 overflow-hidden">
+            <div class="bg-gray-900 px-6 py-4">
+                <h3 class="text-2xl font-bold text-white">
+                    <span class="lang-en">Registration Fees</span>
+                    <span class="lang-zh">注册费用</span>
+                </h3>
+            </div>
+            <div class="p-6">
+                <p class="text-sm text-gray-500 mb-4">
+                    <span class="lang-en">Amounts are listed as Early / Regular.</span>
+                    <span class="lang-zh">费用按 早鸟 / 常规 标示。</span>
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="rounded-2xl border border-green-200 bg-gradient-to-br from-green-50 to-white p-6 shadow-sm">
+                        <p class="text-sm font-semibold text-green-700 mb-1"><span class="lang-en">Students</span><span class="lang-zh">学生</span></p>
+                        <p class="text-4xl font-extrabold text-gray-900 leading-tight">$50 <span class="text-sm font-semibold text-gray-500">USD</span></p>
+                        <p class="text-xs text-gray-500 mt-1"><span class="lang-en">Early-Bird Fee</span><span class="lang-zh">早鸟价</span></p>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p><span class="font-semibold"><span class="lang-en">Regular:</span><span class="lang-zh">常规：</span></span>$100 USD</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+                        <p class="text-sm font-semibold text-blue-700 mb-1"><span class="lang-en">Faculty</span><span class="lang-zh">老师</span></p>
+                        <p class="text-4xl font-extrabold text-gray-900 leading-tight">$100 <span class="text-sm font-semibold text-gray-500">USD</span></p>
+                        <p class="text-xs text-gray-500 mt-1"><span class="lang-en">Early-Bird Fee</span><span class="lang-zh">早鸟价</span></p>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p><span class="font-semibold"><span class="lang-en">Regular:</span><span class="lang-zh">常规：</span></span>$200 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 text-white rounded-2xl p-8 md:p-10 text-center shadow-lg">
             <h3 class="text-2xl font-bold mb-4">
                 <span class="lang-en">Submit Your Paper</span>
                 <span class="lang-zh">提交您的论文</span>
             </h3>
-            <p class="mb-6 text-gray-300">
-                <span class="lang-en">Please visit our submission portal to submit your paper.</span>
-                <span class="lang-zh">请访问我们的投稿通道提交您的论文。</span>
+            <p class="mb-6 text-gray-300 text-lg">
+                <span class="lang-en">Please submit your paper by email.</span>
+                <span class="lang-zh">请通过邮箱提交您的论文。</span>
             </p>
-            <a href="https://smlecon.com/2026_summer_conference.html" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition shadow-md">https://smlecon.com/2026_summer_conference.html</a>
+            <a href="mailto:smleconference@gmail.com" class="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 sm:px-8 rounded-full text-base sm:text-lg transition shadow-md text-center">
+                <span class="lang-en">Submit via Email (smleconference@gmail.com)</span>
+                <span class="lang-zh">邮箱投稿（smleconference@gmail.com）</span>
+            </a>
             <p class="mt-6 text-sm text-gray-400">
-                <span class="lang-en">For inquiries:</span><span class="lang-zh">学术及会务咨询：</span> 
-                <a href="mailto:xx@xx.com" class="text-green-400 hover:underline">xx@xx.com</a>
+                <span class="lang-en">Questions about the conference or your submission? <a href="mailto:smleconference@gmail.com" class="text-green-300 hover:underline">Contact the organizing committee</a>.</span>
+                <span class="lang-zh">如有会议或投稿相关问题，请<a href="mailto:smleconference@gmail.com" class="text-green-300 hover:underline">联系组织委员会</a>。</span>
             </p>
         </div>
     </div>
