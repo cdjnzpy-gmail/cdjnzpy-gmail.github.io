@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 SMLE Annual Conference - Schedule</title>
+  <meta name="description" content="Schedule for the 2026 SMLE Annual Conference: Machine Learning in Economics.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #667386;
+      --paper: #ffffff;
+      --wash: #f6f8fb;
+      --line: #d8e0ea;
+      --deep: #253244;
+      --teal: #15746b;
+      --teal-soft: #e7f4f1;
+      --coral: #b7553d;
+      --coral-soft: #fff0ea;
+      --green: #4f7d3b;
+      --green-soft: #edf6e8;
+      --gold: #9c711f;
+      --gold-soft: #fff6db;
+      --blue: #315f9f;
+      --blue-soft: #eaf1fb;
+      --rose: #9d4e64;
+      --rose-soft: #fdeef3;
+      --shadow: 0 18px 48px rgba(23, 32, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--wash);
+      color: var(--ink);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background-image:
+        linear-gradient(115deg, rgba(18, 28, 40, 0.92), rgba(21, 116, 107, 0.82) 54%, rgba(183, 85, 61, 0.76)),
+        url("https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 44px;
+      background: linear-gradient(180deg, rgba(246, 248, 251, 0), var(--wash));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 330px;
+      padding: 44px 0 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      font-size: 0.9rem;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.35rem, 5.6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      margin: 18px 0 0;
+      max-width: 780px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      padding: 18px;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      min-width: 0;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .meta-label {
+      color: rgba(255, 255, 255, 0.68);
+      font-weight: 750;
+    }
+
+    .meta-value {
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .overview-band {
+      padding: 26px 0 10px;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .overview-copy,
+    .count-grid,
+    .grid-head,
+    .time-cell,
+    .break-card,
+    .talk-card,
+    .notes {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .overview-copy,
+    .count-grid,
+    .notes {
+      box-shadow: 0 10px 30px rgba(23, 32, 42, 0.06);
+    }
+
+    .overview-copy {
+      padding: 22px;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .overview-copy h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      line-height: 1.2;
+    }
+
+    .overview-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .count-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+
+    .count-item {
+      padding: 20px 16px;
+      border-left: 1px solid var(--line);
+      min-width: 0;
+    }
+
+    .count-item:first-child {
+      border-left: 0;
+    }
+
+    .count-number {
+      display: block;
+      color: var(--deep);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .schedule-section {
+      padding: 24px 0 54px;
+    }
+
+    .day-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 28px 0 14px;
+      padding-top: 14px;
+      border-top: 2px solid var(--line);
+    }
+
+    .day-title h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .day-title p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: minmax(92px, 0.36fr) repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .schedule-grid > * {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .grid-head {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 12px 14px;
+      color: var(--deep);
+      font-weight: 850;
+      box-shadow: 0 8px 16px rgba(23, 32, 42, 0.05);
+    }
+
+    .grid-head.track-a {
+      border-top: 4px solid var(--teal);
+    }
+
+    .grid-head.track-b {
+      border-top: 4px solid var(--coral);
+    }
+
+    .grid-head small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.45;
+      font-weight: 750;
+    }
+
+    .time-cell {
+      min-height: 154px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--deep);
+      font-weight: 850;
+      line-height: 1.35;
+      background: linear-gradient(180deg, #fff, #f4f7fb);
+    }
+
+    .time-cell span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 750;
+    }
+
+    .break-time {
+      min-height: 72px;
+      background: linear-gradient(180deg, #fff, var(--gold-soft));
+    }
+
+    .break-card {
+      grid-column: span 2;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      color: var(--gold);
+      background: linear-gradient(135deg, var(--gold-soft), #fff);
+      font-weight: 850;
+    }
+
+    .break-card small {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 750;
+    }
+
+    .talk-card {
+      position: relative;
+      min-height: 154px;
+      min-width: 0;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(23, 32, 42, 0.04);
+    }
+
+    .talk-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--blue);
+    }
+
+    .is-speaker {
+      background: linear-gradient(135deg, var(--coral-soft), #fff 62%);
+    }
+
+    .is-speaker::before {
+      background: var(--coral);
+    }
+
+    .is-macro {
+      background: linear-gradient(135deg, var(--teal-soft), #fff 62%);
+    }
+
+    .is-macro::before {
+      background: var(--teal);
+    }
+
+    .is-computing {
+      background: linear-gradient(135deg, var(--blue-soft), #fff 62%);
+    }
+
+    .is-computing::before {
+      background: var(--blue);
+    }
+
+    .is-other {
+      background: linear-gradient(135deg, var(--green-soft), #fff 62%);
+    }
+
+    .is-other::before {
+      background: var(--green);
+    }
+
+    .is-econometrics {
+      background: linear-gradient(135deg, var(--rose-soft), #fff 62%);
+    }
+
+    .is-econometrics::before {
+      background: var(--rose);
+    }
+
+    .talk-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 3px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 4px 7px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(101, 113, 132, 0.22);
+      color: var(--deep);
+      font-size: 0.74rem;
+      font-weight: 850;
+    }
+
+    .talk-card h3 {
+      margin: 0;
+      padding-left: 3px;
+      color: var(--ink);
+      font-size: clamp(0.98rem, 1.4vw, 1.16rem);
+      line-height: 1.36;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .speaker {
+      margin: auto 0 0;
+      padding-left: 3px;
+      color: var(--deep);
+      font-weight: 850;
+      line-height: 1.35;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .paper-note {
+      margin: 0;
+      padding-left: 3px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .note-section {
+      padding: 0 0 54px;
+    }
+
+    .notes {
+      padding: 20px 22px;
+    }
+
+    .notes h2 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+    }
+
+    .notes ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .notes strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .overview {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: 0;
+        padding: 38px 0 48px;
+      }
+
+      .count-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .count-item:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .count-item:nth-child(4) {
+        border-top: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .day-title {
+        align-items: start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .schedule-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .schedule-grid > * {
+        width: 100%;
+        max-width: calc(100vw - 22px);
+      }
+
+      .grid-head {
+        position: static;
+      }
+
+      .time-cell,
+      .talk-card {
+        min-height: 0;
+      }
+
+      .time-cell {
+        padding: 12px 14px;
+      }
+
+      .break-card {
+        grid-column: auto;
+        min-height: 0;
+        align-items: start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .talk-card {
+        padding: 14px;
+      }
+
+      .talk-card h3 {
+        font-size: 0.96rem;
+        width: 100%;
+        max-width: calc(100vw - 64px);
+      }
+
+      .speaker,
+      .paper-note {
+        width: 100%;
+        max-width: calc(100vw - 64px);
+      }
+
+      .talk-meta {
+        justify-content: flex-start;
+      }
+
+      .meta-list li {
+        grid-template-columns: 78px 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .count-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .count-item {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .count-item:first-child {
+        border-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 13vw, 3.6rem);
+      }
+    }
+
+    @media print {
+      body,
+      .hero {
+        background: #fff;
+      }
+
+      .hero {
+        color: var(--ink);
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .hero-panel,
+      .overview-copy,
+      .count-grid,
+      .grid-head,
+      .time-cell,
+      .break-card,
+      .talk-card,
+      .notes {
+        box-shadow: none;
+      }
+
+      .grid-head {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="eyebrow">2026 SMLE Annual Conference</p>
+        <h1>Conference Schedule</h1>
+        <p class="hero-subtitle">Machine Learning in Economics: parallel sessions</p>
+      </div>
+      <aside class="hero-panel" aria-label="Conference information">
+        <ul class="meta-list">
+          <li>
+            <span class="meta-label">Dates</span>
+            <span class="meta-value">July 11-12, 2026</span>
+          </li>
+          <li>
+            <span class="meta-label">Venue</span>
+            <span class="meta-value">Parallel Session 1: XX1 Room<br>Parallel Session 2: XX2 Room<br>School of Economics, Peking University</span>
+          </li>
+          <li>
+            <span class="meta-label">Hosts</span>
+            <span class="meta-value">SMLE; School of Economics, Peking University</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="schedule-section">
+      <div class="container">
+        <div class="day-title">
+          <h2>Saturday, July 11</h2>
+          <p>Day 1</p>
+        </div>
+
+        <div class="schedule-grid" aria-label="Schedule for July 11">
+          <div class="grid-head">Time<small>Session</small></div>
+          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Macroeconomics, computation, and quantitative methods</small></div>
+          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Finance, microeconomics, econometrics, and other topics</small></div>
+
+          <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-01</span></div>
+            <h3>Bayesian optimization on the equilibrium manifold</h3>
+            <p class="speaker">Felix Kubler</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Finance</span><span>PS2-01</span></div>
+            <h3>Asset Pricing with Endogenous Default</h3>
+            <p class="speaker">Paul Ehling</p>
+            <p class="paper-note">Jonas Barth-Stenersen; Paul Ehling; Junjie Guo; Kenneth (Wei) Wang</p>
+          </article>
+
+          <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-02</span></div>
+            <h3>Macroeconomics with Foundation Models: Forecasting, Identification, and Structural Scenario Analysis</h3>
+            <p class="speaker">Zhihang Liang</p>
+            <p class="paper-note">Pablo Guerron, Suraj Kumar, Zhihang Liang</p>
+          </article>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS2-02</span></div>
+            <h3>Beyond L1: Double L0 Regularization in Testing New Factors</h3>
+            <p class="speaker">Yihan Gao</p>
+            <p class="paper-note">Jing Chen, Yihan Gao, Yushan Xue, Yifeng Zhu</p>
+          </article>
+
+          <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
+          <div class="break-card">Morning Coffee Break<small>10:20-10:55</small></div>
+
+          <div class="time-cell">10:55-11:35<span>Talk 3</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-03</span></div>
+            <h3>Informed Actor Critic Method for Optimal Control in Economic Dynamics</h3>
+            <p class="speaker">Serguei Maliar</p>
+            <p class="paper-note">Bo Li, Serguei Maliar and Peiyuan Zhang</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-03</span></div>
+            <h3>Computing Power, Synthetic Data, and Welfare in the Generative-AI Economy</h3>
+            <p class="speaker">Longtian Zhang</p>
+            <p class="paper-note">Qing Chang, Danxia Xie, Longtian Zhang</p>
+          </article>
+
+          <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS1-04</span></div>
+            <h3>Algorithmic Coordination in Global Games</h3>
+            <p class="speaker">Xuesong Huang</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">LLM</span><span>PS2-04</span></div>
+            <h3>Understanding the Mechanism of Altruism in Large Language Models</h3>
+            <p class="speaker">Shuhuai Zhang</p>
+            <p class="paper-note">Shuhuai Zhang, Shu Wang, Zijun Yao, Chuanhao Li, Xiaozhi Wang, Songfa Zhong, Tracy Xiao Liu</p>
+          </article>
+
+          <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
+          <div class="break-card">Lunch<small>12:15-14:00</small></div>
+
+          <div class="time-cell">14:00-14:40<span>Talk 5</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-05</span></div>
+            <h3>Title TBA</h3>
+            <p class="speaker">Zhigang Feng</p>
+            <p class="paper-note">Title to be announced</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-05</span></div>
+            <h3>Heterogeneous Attention and Macroeconomic Dynamics: Theory and LLM Experiments</h3>
+            <p class="speaker">Jiahui Sun</p>
+          </article>
+
+          <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Finance</span><span>PS1-06</span></div>
+            <h3>A Deep Ambiguity Framework for Portfolio Optimization: Integrating LSTM-MDN Model</h3>
+            <p class="speaker">Xinping Li / Yeguan Yu</p>
+            <p class="paper-note">Yeguan Yu, Xinping Li, Liuyan Zhao</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-06</span></div>
+            <h3>Accelerating the Krusell-Smith Algorithm with Deep Learning</h3>
+            <p class="speaker">Yoshiya Yokomoto</p>
+          </article>
+
+          <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
+          <div class="break-card">Afternoon Coffee Break<small>15:20-15:55</small></div>
+
+          <div class="time-cell">15:55-16:35<span>Talk 7</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS1-07</span></div>
+            <h3>Institutional Asset Pricing with Segmentation and Household Heterogeneity</h3>
+            <p class="speaker">Goutham Gopalakrishna</p>
+          </article>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Econometrics</span><span>PS2-07</span></div>
+            <h3>Causal Mediation Analysis with Proxy Variables and Minimax Learning</h3>
+            <p class="speaker">Jinfeng Li</p>
+            <p class="paper-note">Hongjun Li, Jinfeng Li</p>
+          </article>
+
+          <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS1-08</span></div>
+            <h3>Institutional Digital Opening, Telecommunications Thresholds, and Bilateral Services Exports: Evidence from Double Machine Learning</h3>
+            <p class="speaker">Weijia Wang</p>
+            <p class="paper-note">Wang Weijia, Wang Zengtao</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-08</span></div>
+            <h3>Car Adoption: Fuel or Electric</h3>
+            <p class="speaker">Dandan Wang</p>
+            <p class="paper-note">Russell Cooper, Dandan Wang</p>
+          </article>
+        </div>
+
+        <div class="day-title">
+          <h2>Sunday, July 12</h2>
+          <p>Day 2</p>
+        </div>
+
+        <div class="schedule-grid" aria-label="Schedule for July 12">
+          <div class="grid-head">Time<small>Session</small></div>
+          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Macroeconomics, computation, and quantitative methods</small></div>
+          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Finance, microeconomics, econometrics, and other topics</small></div>
+
+          <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Topic TBA</span><span>PS1-09</span></div>
+            <h3>Title TBA</h3>
+            <p class="speaker">Jonathan Payne</p>
+            <p class="paper-note">Title to be announced</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS2-09</span></div>
+            <h3>Operator Equilibrium Nets</h3>
+            <p class="speaker">Jun Zhang</p>
+          </article>
+
+          <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-10</span></div>
+            <h3>The AI Growth Paradox: Incumbent Entrenchment and the Distribution of Innovation</h3>
+            <p class="speaker">Guiyou Guan</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS2-10</span></div>
+            <h3>Deep Learning for Dynamic Programming under Recursive Utility</h3>
+            <p class="speaker">Xianhua Peng</p>
+            <p class="paper-note">Xianhua Peng, Wu Guo</p>
+          </article>
+
+          <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
+          <div class="break-card">Morning Coffee Break<small>10:20-10:55</small></div>
+
+          <div class="time-cell">10:55-11:35<span>Talk 3</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-11</span></div>
+            <h3>Equilibrium World Models</h3>
+            <p class="speaker">Simon Scheidegger</p>
+            <p class="paper-note">Joint with Andreas Schaab</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-11</span></div>
+            <h3>The Evolution of Labor Income Distribution under the Impact of Artificial Intelligence</h3>
+            <p class="speaker">Jinyun Fan</p>
+            <p class="paper-note">Yang Liu, Jinyun Fan</p>
+          </article>
+
+          <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-12</span></div>
+            <h3>Applications of Deep Learning-Based Probabilistic Approach to Economic Models with High-Dimensional Controls</h3>
+            <p class="speaker">Ji Huang</p>
+            <p class="paper-note">Hongxiao Chen, Ji Huang</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-12</span></div>
+            <h3>Using Deep Learning and Finite-Difference Methods Together to Solve Heterogeneous Agent Models with Aggregate Shocks</h3>
+            <p class="speaker">Nam Phan</p>
+            <p class="paper-note">Brant Abbott, Nam Van Phan</p>
+          </article>
+
+          <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
+          <div class="break-card">Lunch<small>12:15-14:00</small></div>
+
+          <div class="time-cell">14:00-14:40<span>Talk 5</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Financial Economics</span><span>PS1-13</span></div>
+            <h3>Investor Composition, Bond Liquidity, and Labor Market</h3>
+            <p class="speaker">Yucheng Yang</p>
+            <p class="paper-note">Joint with Xiaoji Lin, Runhuan Wang, and Lin Xie</p>
+          </article>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-13</span></div>
+            <h3>Administrative Transaction Networks Reveal Distinct Informational Regimes across Economic Sectors</h3>
+            <p class="speaker">Sixuan Li</p>
+            <p class="paper-note">Sixuan Li, Cong Peng</p>
+          </article>
+
+          <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS1-14</span></div>
+            <h3>Factor Investing and the Integration of Corporate Bond and Equity Markets</h3>
+            <p class="speaker">Yuanzhi Wang</p>
+            <p class="paper-note">Xinlei Hao, Xin He, Junbo Wang, Yuanzhi Wang</p>
+          </article>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Public Finance</span><span>PS2-14</span></div>
+            <h3>Machine Learning Optimal Nonlinear Income Taxation: A VPINN Approach</h3>
+            <p class="speaker">Yige Xu</p>
+          </article>
+
+          <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
+          <div class="break-card">Afternoon Coffee Break<small>15:20-15:55</small></div>
+
+          <div class="time-cell">15:55-16:35<span>Talk 7</span></div>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS1-15</span></div>
+            <h3>Mechanisms Through Which AI Alleviates Baumol's Cost Disease: Causal Inference Evidence from Double Machine Learning</h3>
+            <p class="speaker">Qiangqiang Liu</p>
+            <p class="paper-note">Chaoliang Han, Qiangqiang Liu</p>
+          </article>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-15</span></div>
+            <h3>Continuous-Time Heterogeneous Agent Models with Recursive Utility and Preference for Late Resolution</h3>
+            <p class="speaker">Qing Tang</p>
+            <p class="paper-note">Yves Achdou; Qing Tang</p>
+          </article>
+
+          <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
+          <article class="talk-card is-speaker">
+            <div class="talk-meta"><span class="badge">Topic TBA</span><span>PS1-16</span></div>
+            <h3>Title TBA</h3>
+            <p class="speaker">Shenghao Zhu</p>
+            <p class="paper-note">Title to be announced</p>
+          </article>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-16</span></div>
+            <h3>Artificial Intelligence, Expertise Requirements, and Wealth Inequality</h3>
+            <p class="speaker">Xuejing Ding</p>
+            <p class="paper-note">Xuejing Ding, Xiaoguang Yang</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
