@@ -135,11 +135,14 @@
     .meta-label {
       color: rgba(255, 255, 255, 0.68);
       font-weight: 750;
+      min-width: 0;
     }
 
     .meta-value {
       font-weight: 750;
+      min-width: 0;
       overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .overview-band {
@@ -292,6 +295,8 @@
       font-size: 0.76rem;
       line-height: 1.45;
       font-weight: 750;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .time-cell {
@@ -394,6 +399,17 @@
 
     .is-econometrics::before {
       background: var(--rose);
+    }
+
+    .is-empty {
+      background: rgba(255, 255, 255, 0.64);
+      color: var(--muted);
+      border-style: dashed;
+      box-shadow: none;
+    }
+
+    .is-empty::before {
+      background: rgba(101, 113, 132, 0.34);
     }
 
     .talk-meta {
@@ -554,13 +570,21 @@
       .talk-card h3 {
         font-size: 0.96rem;
         width: 100%;
-        max-width: calc(100vw - 64px);
+        max-width: min(100%, 34ch);
+        white-space: normal;
       }
 
       .speaker,
       .paper-note {
         width: 100%;
-        max-width: calc(100vw - 64px);
+        max-width: min(100%, 34ch);
+        white-space: normal;
+      }
+
+      .grid-head small,
+      .badge {
+        max-width: min(100%, 34ch);
+        white-space: normal;
       }
 
       .talk-meta {
@@ -568,7 +592,8 @@
       }
 
       .meta-list li {
-        grid-template-columns: 78px 1fr;
+        grid-template-columns: 1fr;
+        gap: 2px;
       }
     }
 
@@ -659,8 +684,8 @@
 
         <div class="schedule-grid" aria-label="Schedule for July 11">
           <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Macroeconomics, computation, and quantitative methods</small></div>
-          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Finance, microeconomics, econometrics, and other topics</small></div>
+          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Recommended papers, computational economics, and field talks</small></div>
+          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Other contributed papers</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
@@ -668,25 +693,23 @@
             <h3>Bayesian optimization on the equilibrium manifold</h3>
             <p class="speaker">Felix Kubler</p>
           </article>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">Finance</span><span>PS2-01</span></div>
-            <h3>Asset Pricing with Endogenous Default</h3>
-            <p class="speaker">Paul Ehling</p>
-            <p class="paper-note">Jonas Barth-Stenersen; Paul Ehling; Junjie Guo; Kenneth (Wei) Wang</p>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-01</span></div>
+            <h3>Computing Power, Synthetic Data, and Welfare in the Generative-AI Economy</h3>
+            <p class="speaker">Longtian Zhang</p>
+            <p class="paper-note">Qing Chang, Danxia Xie, Longtian Zhang</p>
           </article>
 
           <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
-          <article class="talk-card is-macro">
-            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-02</span></div>
-            <h3>Macroeconomics with Foundation Models: Forecasting, Identification, and Structural Scenario Analysis</h3>
-            <p class="speaker">Zhihang Liang</p>
-            <p class="paper-note">Pablo Guerron, Suraj Kumar, Zhihang Liang</p>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-02</span></div>
+            <h3>Operator Equilibrium Nets</h3>
+            <p class="speaker">Jun Zhang</p>
           </article>
-          <article class="talk-card is-econometrics">
-            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS2-02</span></div>
-            <h3>Beyond L1: Double L0 Regularization in Testing New Factors</h3>
-            <p class="speaker">Yihan Gao</p>
-            <p class="paper-note">Jing Chen, Yihan Gao, Yushan Xue, Yifeng Zhu</p>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-02</span></div>
+            <h3>Heterogeneous Attention and Macroeconomic Dynamics: Theory and LLM Experiments</h3>
+            <p class="speaker">Jiahui Sun</p>
           </article>
 
           <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
@@ -699,24 +722,24 @@
             <p class="speaker">Serguei Maliar</p>
             <p class="paper-note">Bo Li, Serguei Maliar and Peiyuan Zhang</p>
           </article>
-          <article class="talk-card is-other">
+          <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-03</span></div>
-            <h3>Computing Power, Synthetic Data, and Welfare in the Generative-AI Economy</h3>
-            <p class="speaker">Longtian Zhang</p>
-            <p class="paper-note">Qing Chang, Danxia Xie, Longtian Zhang</p>
+            <h3>Artificial Intelligence, Expertise Requirements, and Wealth Inequality</h3>
+            <p class="speaker">Xuejing Ding</p>
+            <p class="paper-note">Xuejing Ding, Xiaoguang Yang</p>
           </article>
 
           <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS1-04</span></div>
-            <h3>Algorithmic Coordination in Global Games</h3>
-            <p class="speaker">Xuesong Huang</p>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-04</span></div>
+            <h3>Deep Learning for Dynamic Programming under Recursive Utility</h3>
+            <p class="speaker">Xianhua Peng</p>
+            <p class="paper-note">Xianhua Peng, Wu Guo</p>
           </article>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">LLM</span><span>PS2-04</span></div>
-            <h3>Understanding the Mechanism of Altruism in Large Language Models</h3>
-            <p class="speaker">Shuhuai Zhang</p>
-            <p class="paper-note">Shuhuai Zhang, Shu Wang, Zijun Yao, Chuanhao Li, Xiaozhi Wang, Songfa Zhong, Tracy Xiao Liu</p>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-04</span></div>
+            <h3>The AI Growth Paradox: Incumbent Entrenchment and the Distribution of Innovation</h3>
+            <p class="speaker">Guiyou Guan</p>
           </article>
 
           <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
@@ -729,23 +752,25 @@
             <p class="speaker">Zhigang Feng</p>
             <p class="paper-note">Title to be announced</p>
           </article>
-          <article class="talk-card is-other">
+          <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-05</span></div>
-            <h3>Heterogeneous Attention and Macroeconomic Dynamics: Theory and LLM Experiments</h3>
-            <p class="speaker">Jiahui Sun</p>
+            <h3>The Evolution of Labor Income Distribution under the Impact of Artificial Intelligence</h3>
+            <p class="speaker">Jinyun Fan</p>
+            <p class="paper-note">Yang Liu, Jinyun Fan</p>
           </article>
 
           <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">Finance</span><span>PS1-06</span></div>
-            <h3>A Deep Ambiguity Framework for Portfolio Optimization: Integrating LSTM-MDN Model</h3>
-            <p class="speaker">Xinping Li / Yeguan Yu</p>
-            <p class="paper-note">Yeguan Yu, Xinping Li, Liuyan Zhao</p>
+          <article class="talk-card is-macro">
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-06</span></div>
+            <h3>Macroeconomics with Foundation Models: Forecasting, Identification, and Structural Scenario Analysis</h3>
+            <p class="speaker">Zhihang Liang</p>
+            <p class="paper-note">Pablo Guerron, Suraj Kumar, Zhihang Liang</p>
           </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-06</span></div>
-            <h3>Accelerating the Krusell-Smith Algorithm with Deep Learning</h3>
-            <p class="speaker">Yoshiya Yokomoto</p>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Finance</span><span>PS2-06</span></div>
+            <h3>A Deep Ambiguity Framework for Portfolio Optimization: Integrating LSTM-MDN Model</h3>
+            <p class="speaker">Yeguan Yu / Xinping Li</p>
+            <p class="paper-note">Yeguan Yu, Xinping Li, Liuyan Zhao</p>
           </article>
 
           <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
@@ -757,25 +782,24 @@
             <h3>Institutional Asset Pricing with Segmentation and Household Heterogeneity</h3>
             <p class="speaker">Goutham Gopalakrishna</p>
           </article>
-          <article class="talk-card is-econometrics">
-            <div class="talk-meta"><span class="badge">Econometrics</span><span>PS2-07</span></div>
-            <h3>Causal Mediation Analysis with Proxy Variables and Minimax Learning</h3>
-            <p class="speaker">Jinfeng Li</p>
-            <p class="paper-note">Hongjun Li, Jinfeng Li</p>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">LLM</span><span>PS2-07</span></div>
+            <h3>Understanding the Mechanism of Altruism in Large Language Models</h3>
+            <p class="speaker">Shuhuai Zhang</p>
+            <p class="paper-note">Shuhuai Zhang, Shu Wang, Zijun Yao, Chuanhao Li, Xiaozhi Wang, Songfa Zhong, Tracy Xiao Liu</p>
           </article>
 
           <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
-          <article class="talk-card is-econometrics">
-            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS1-08</span></div>
-            <h3>Institutional Digital Opening, Telecommunications Thresholds, and Bilateral Services Exports: Evidence from Double Machine Learning</h3>
-            <p class="speaker">Weijia Wang</p>
-            <p class="paper-note">Wang Weijia, Wang Zengtao</p>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-08</span></div>
+            <h3>Applications of Deep Learning-Based Probabilistic Approach to Economic Models with High-Dimensional Controls</h3>
+            <p class="speaker">Ji Huang</p>
+            <p class="paper-note">Hongxiao Chen, Ji Huang</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-08</span></div>
-            <h3>Car Adoption: Fuel or Electric</h3>
-            <p class="speaker">Dandan Wang</p>
-            <p class="paper-note">Russell Cooper, Dandan Wang</p>
+            <h3>Algorithmic Coordination in Global Games</h3>
+            <p class="speaker">Xuesong Huang</p>
           </article>
         </div>
 
@@ -786,33 +810,35 @@
 
         <div class="schedule-grid" aria-label="Schedule for July 12">
           <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Macroeconomics, computation, and quantitative methods</small></div>
-          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Finance, microeconomics, econometrics, and other topics</small></div>
+          <div class="grid-head track-a">Parallel Session 1<small>XX1 Room · Recommended papers, computational economics, and field talks</small></div>
+          <div class="grid-head track-b">Parallel Session 2<small>XX2 Room · Other contributed papers</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
-            <div class="talk-meta"><span class="badge">Topic TBA</span><span>PS1-09</span></div>
-            <h3>Title TBA</h3>
-            <p class="speaker">Jonathan Payne</p>
-            <p class="paper-note">Title to be announced</p>
+            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-09</span></div>
+            <h3>Equilibrium World Models</h3>
+            <p class="speaker">Simon Scheidegger</p>
+            <p class="paper-note">Joint with Andreas Schaab</p>
           </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS2-09</span></div>
-            <h3>Operator Equilibrium Nets</h3>
-            <p class="speaker">Jun Zhang</p>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-09</span></div>
+            <h3>Administrative Transaction Networks Reveal Distinct Informational Regimes across Economic Sectors</h3>
+            <p class="speaker">Sixuan Li</p>
+            <p class="paper-note">Sixuan Li, Cong Peng</p>
           </article>
 
           <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
           <article class="talk-card is-macro">
-            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-10</span></div>
-            <h3>The AI Growth Paradox: Incumbent Entrenchment and the Distribution of Innovation</h3>
-            <p class="speaker">Guiyou Guan</p>
+            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS1-10</span></div>
+            <h3>Continuous-Time Heterogeneous Agent Models with Recursive Utility and Preference for Late Resolution</h3>
+            <p class="speaker">Qing Tang</p>
+            <p class="paper-note">Yves Achdou; Qing Tang</p>
           </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS2-10</span></div>
-            <h3>Deep Learning for Dynamic Programming under Recursive Utility</h3>
-            <p class="speaker">Xianhua Peng</p>
-            <p class="paper-note">Xianhua Peng, Wu Guo</p>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-10</span></div>
+            <h3>Car Adoption: Fuel or Electric</h3>
+            <p class="speaker">Dandan Wang</p>
+            <p class="paper-note">Russell Cooper, Dandan Wang</p>
           </article>
 
           <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
@@ -820,30 +846,30 @@
 
           <div class="time-cell">10:55-11:35<span>Talk 3</span></div>
           <article class="talk-card is-speaker">
-            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-11</span></div>
-            <h3>Equilibrium World Models</h3>
-            <p class="speaker">Simon Scheidegger</p>
-            <p class="paper-note">Joint with Andreas Schaab</p>
+            <div class="talk-meta"><span class="badge">Financial Economics</span><span>PS1-11</span></div>
+            <h3>Investor Composition, Bond Liquidity, and Labor Market</h3>
+            <p class="speaker">Yucheng Yang</p>
+            <p class="paper-note">Joint with Xiaoji Lin, Runhuan Wang, and Lin Xie</p>
           </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-11</span></div>
-            <h3>The Evolution of Labor Income Distribution under the Impact of Artificial Intelligence</h3>
-            <p class="speaker">Jinyun Fan</p>
-            <p class="paper-note">Yang Liu, Jinyun Fan</p>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Econometrics</span><span>PS2-11</span></div>
+            <h3>Causal Mediation Analysis with Proxy Variables and Minimax Learning</h3>
+            <p class="speaker">Jinfeng Li</p>
+            <p class="paper-note">Hongjun Li, Jinfeng Li</p>
           </article>
 
           <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
           <article class="talk-card is-computing">
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-12</span></div>
-            <h3>Applications of Deep Learning-Based Probabilistic Approach to Economic Models with High-Dimensional Controls</h3>
-            <p class="speaker">Ji Huang</p>
-            <p class="paper-note">Hongxiao Chen, Ji Huang</p>
-          </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-12</span></div>
             <h3>Using Deep Learning and Finite-Difference Methods Together to Solve Heterogeneous Agent Models with Aggregate Shocks</h3>
             <p class="speaker">Nam Phan</p>
             <p class="paper-note">Brant Abbott, Nam Van Phan</p>
+          </article>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS2-12</span></div>
+            <h3>Beyond L1: Double L0 Regularization in Testing New Factors</h3>
+            <p class="speaker">Yihan Gao</p>
+            <p class="paper-note">Jing Chen, Yihan Gao, Yushan Xue, Yifeng Zhu</p>
           </article>
 
           <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
@@ -851,60 +877,56 @@
 
           <div class="time-cell">14:00-14:40<span>Talk 5</span></div>
           <article class="talk-card is-speaker">
-            <div class="talk-meta"><span class="badge">Financial Economics</span><span>PS1-13</span></div>
-            <h3>Investor Composition, Bond Liquidity, and Labor Market</h3>
-            <p class="speaker">Yucheng Yang</p>
-            <p class="paper-note">Joint with Xiaoji Lin, Runhuan Wang, and Lin Xie</p>
+            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-13</span></div>
+            <h3>Stability of a Heterogeneous Agent Model with Precautionary Savings</h3>
+            <p class="speaker">Shenghao Zhu</p>
           </article>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-13</span></div>
-            <h3>Administrative Transaction Networks Reveal Distinct Informational Regimes across Economic Sectors</h3>
-            <p class="speaker">Sixuan Li</p>
-            <p class="paper-note">Sixuan Li, Cong Peng</p>
+          <article class="talk-card is-econometrics">
+            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS2-13</span></div>
+            <h3>Institutional Digital Opening, Telecommunications Thresholds, and Bilateral Services Exports: Evidence from Double Machine Learning</h3>
+            <p class="speaker">Weijia Wang</p>
+            <p class="paper-note">Wang Weijia, Wang Zengtao</p>
           </article>
 
           <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Finance</span><span>PS1-14</span></div>
+            <h3>Asset Pricing with Endogenous Default</h3>
+            <p class="speaker">Paul Ehling</p>
+            <p class="paper-note">Jonas Barth-Stenersen; Paul Ehling; Junjie Guo; Kenneth (Wei) Wang</p>
+          </article>
           <article class="talk-card is-econometrics">
-            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS1-14</span></div>
+            <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS2-14</span></div>
             <h3>Factor Investing and the Integration of Corporate Bond and Equity Markets</h3>
             <p class="speaker">Yuanzhi Wang</p>
             <p class="paper-note">Xinlei Hao, Xin He, Junbo Wang, Yuanzhi Wang</p>
-          </article>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Public Finance</span><span>PS2-14</span></div>
-            <h3>Machine Learning Optimal Nonlinear Income Taxation: A VPINN Approach</h3>
-            <p class="speaker">Yige Xu</p>
           </article>
 
           <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
           <div class="break-card">Afternoon Coffee Break<small>15:20-15:55</small></div>
 
           <div class="time-cell">15:55-16:35<span>Talk 7</span></div>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS1-15</span></div>
+            <h3>Accelerating the Krusell-Smith Algorithm with Deep Learning</h3>
+            <p class="speaker">Yoshiya Yokomoto</p>
+          </article>
           <article class="talk-card is-econometrics">
-            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS1-15</span></div>
+            <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS2-15</span></div>
             <h3>Mechanisms Through Which AI Alleviates Baumol's Cost Disease: Causal Inference Evidence from Double Machine Learning</h3>
             <p class="speaker">Qiangqiang Liu</p>
             <p class="paper-note">Chaoliang Han, Qiangqiang Liu</p>
           </article>
-          <article class="talk-card is-macro">
-            <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS2-15</span></div>
-            <h3>Continuous-Time Heterogeneous Agent Models with Recursive Utility and Preference for Late Resolution</h3>
-            <p class="speaker">Qing Tang</p>
-            <p class="paper-note">Yves Achdou; Qing Tang</p>
-          </article>
 
           <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
-          <article class="talk-card is-speaker">
-            <div class="talk-meta"><span class="badge">Topic TBA</span><span>PS1-16</span></div>
-            <h3>Title TBA</h3>
-            <p class="speaker">Shenghao Zhu</p>
-            <p class="paper-note">Title to be announced</p>
+          <article class="talk-card is-computing">
+            <div class="talk-meta"><span class="badge">Public Finance</span><span>PS1-16</span></div>
+            <h3>Machine Learning Optimal Nonlinear Income Taxation: A VPINN Approach</h3>
+            <p class="speaker">Yige Xu</p>
           </article>
-          <article class="talk-card is-macro">
-            <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-16</span></div>
-            <h3>Artificial Intelligence, Expertise Requirements, and Wealth Inequality</h3>
-            <p class="speaker">Xuejing Ding</p>
-            <p class="paper-note">Xuejing Ding, Xiaoguang Yang</p>
+          <article class="talk-card is-empty">
+            <div class="talk-meta"><span class="badge">Open Slot</span><span>PS2-16</span></div>
+            <h3>No parallel talk scheduled</h3>
           </article>
         </div>
       </div>
