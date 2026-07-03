@@ -106,31 +106,6 @@
       line-height: 1.7;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .hero-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 999px;
-      padding: 10px 16px;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.14);
-      font-weight: 800;
-      text-decoration: none;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-link:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-
     .hero-panel {
       border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 8px;
@@ -296,6 +271,11 @@
       max-width: 100%;
     }
 
+    .grid-spacer {
+      grid-column: 1 / -1;
+      height: 12px;
+    }
+
     .grid-head {
       position: sticky;
       top: 0;
@@ -365,6 +345,24 @@
       color: var(--muted);
       font-size: 0.84rem;
       font-weight: 750;
+    }
+
+    .all-hands-time {
+      min-height: 88px;
+      background: linear-gradient(180deg, #fff, var(--coral-soft));
+      color: var(--coral);
+    }
+
+    .all-hands-card {
+      min-height: 88px;
+      border-color: #f0b7a7;
+      color: #9a3f2a;
+      background: linear-gradient(135deg, var(--coral-soft), #fff);
+      box-shadow: 0 10px 28px rgba(183, 85, 61, 0.12);
+    }
+
+    .all-hands-card small {
+      color: #9a3f2a;
     }
 
     .dinner-time {
@@ -699,12 +697,6 @@
         <p class="eyebrow">2026 SMLE Annual Conference</p>
         <h1>Conference Schedule</h1>
         <p class="hero-subtitle">Machine Learning in Economics: Parallel Sessions</p>
-        <div class="hero-actions">
-          <a class="hero-link" href="2026_summer_conference.html">Conference Details</a>
-          <a class="hero-link" href="https://indico.pku.edu.cn/event/80/" target="_blank" rel="noopener noreferrer">Attendance-Only Registration</a>
-          <a class="hero-link" href="https://maps.app.goo.gl/JYbTt5q4YvSuTWmi8" target="_blank" rel="noopener noreferrer">Campus Entry Map</a>
-          <a class="hero-link" href="https://ditu.amap.com/place/B0FFFDCFGM" target="_blank" rel="noopener noreferrer">Amap</a>
-        </div>
       </div>
       <aside class="hero-panel" aria-label="Conference information">
         <ul class="meta-list">
@@ -714,16 +706,8 @@
           </li>
           <li>
             <span class="meta-label">Venue</span>
-            <span class="meta-value">Session 1: Room 301<br>Session 2: Room 302<br>School of Economics, Peking
+            <span class="meta-value">Opening Ceremony & Group Photo: Room 601<br>Session 1: Room 301<br>Session 2: Room 302<br>School of Economics, Peking
               University</span>
-          </li>
-          <li>
-            <span class="meta-label">Entry</span>
-            <span class="meta-value">Enter campus via PKU Xiaodongmen with passport or national ID card</span>
-          </li>
-          <li>
-            <span class="meta-label">Talks</span>
-            <span class="meta-value">30-minute presentations · English only</span>
           </li>
           <li>
             <span class="meta-label">Hosts</span>
@@ -743,9 +727,14 @@
         </div>
 
         <div class="schedule-grid" aria-label="Schedule for July 11">
+          <div class="grid-spacer" aria-hidden="true"></div>
+          <div class="time-cell all-hands-time">08:30-09:00<span>All participants</span></div>
+          <div class="break-card all-hands-card">Opening Ceremony & Group Photo<small>Room 601</small></div>
+          <div class="grid-spacer" aria-hidden="true"></div>
+
           <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Session 1<small>Room 301 · Invited talks and selected papers</small></div>
-          <div class="grid-head track-b">Session 2<small>Room 302 · Contributed papers</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 301</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 302</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
@@ -865,8 +854,8 @@
 
         <div class="schedule-grid" aria-label="Schedule for July 12">
           <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Session 1<small>Room 301 · Invited talks and selected papers</small></div>
-          <div class="grid-head track-b">Session 2<small>Room 302 · Contributed papers</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 301</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 302</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
@@ -985,7 +974,7 @@
           <h2>Logistics and Presentation Notes</h2>
           <ul>
             <li><strong>Presentation format:</strong> each talk is 30 minutes. The conference language is English.</li>
-            <li><strong>Venue:</strong> sessions take place in Rooms 301 and 302, School of Economics, Peking University.</li>
+            <li><strong>Venue:</strong> the opening ceremony and group photo take place in Room 601; parallel sessions take place in Rooms 301 and 302, School of Economics, Peking University.</li>
             <li><strong>Campus entry:</strong> participants should enter through PKU Xiaodongmen and bring a passport or national ID card for verification.</li>
             <li><strong>Attendance-only participation:</strong> participants without a paper presentation may attend, but registration is required.</li>
           </ul>
