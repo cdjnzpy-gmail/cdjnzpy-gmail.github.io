@@ -306,12 +306,13 @@
     }
 
     .time-cell {
-      min-height: 154px;
+      min-height: 178px;
       padding: 14px 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       color: var(--deep);
+      font-size: 1.02rem;
       font-weight: 850;
       line-height: 1.35;
       background: linear-gradient(180deg, #fff, #f4f7fb);
@@ -319,7 +320,7 @@
 
     .time-cell span {
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.86rem;
       font-weight: 750;
     }
 
@@ -348,17 +349,32 @@
     }
 
     .all-hands-time {
-      min-height: 88px;
+      min-height: 100px;
       background: linear-gradient(180deg, #fff, var(--coral-soft));
       color: var(--coral);
     }
 
     .all-hands-card {
-      min-height: 88px;
+      min-height: 100px;
       border-color: #f0b7a7;
       color: #9a3f2a;
       background: linear-gradient(135deg, var(--coral-soft), #fff);
       box-shadow: 0 10px 28px rgba(183, 85, 61, 0.12);
+    }
+
+    .invited-talk-card {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .invited-talk-card strong {
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.34;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .all-hands-card small {
@@ -383,12 +399,12 @@
 
     .talk-card {
       position: relative;
-      min-height: 154px;
+      min-height: 178px;
       min-width: 0;
-      padding: 15px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(23, 32, 42, 0.04);
     }
@@ -460,7 +476,7 @@
       justify-content: space-between;
       padding-left: 3px;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 800;
       line-height: 1.3;
     }
@@ -473,7 +489,7 @@
       background: rgba(255, 255, 255, 0.74);
       border: 1px solid rgba(101, 113, 132, 0.22);
       color: var(--deep);
-      font-size: 0.74rem;
+      font-size: 0.78rem;
       font-weight: 850;
     }
 
@@ -481,7 +497,7 @@
       margin: 0;
       padding-left: 3px;
       color: var(--ink);
-      font-size: clamp(0.98rem, 1.4vw, 1.16rem);
+      font-size: 1.08rem;
       line-height: 1.36;
       min-width: 0;
       max-width: 100%;
@@ -493,11 +509,25 @@
       margin: auto 0 0;
       padding-left: 3px;
       color: var(--deep);
+      font-size: 1rem;
       font-weight: 850;
       line-height: 1.35;
       min-width: 0;
       max-width: 100%;
       overflow-wrap: anywhere;
+    }
+
+    .affiliation {
+      margin: -5px 0 0;
+      padding-left: 3px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.35;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .paper-note {
@@ -609,13 +639,14 @@
       }
 
       .talk-card h3 {
-        font-size: 0.96rem;
+        font-size: 1rem;
         width: 100%;
         max-width: min(100%, 34ch);
         white-space: normal;
       }
 
       .speaker,
+      .affiliation,
       .paper-note {
         width: 100%;
         max-width: min(100%, 34ch);
@@ -706,7 +737,7 @@
           </li>
           <li>
             <span class="meta-label">Venue</span>
-            <span class="meta-value">Opening Ceremony & Group Photo: Room 601<br>Session 1: Room 219<br>Session 2: Room 305<br>School of Economics, Peking
+            <span class="meta-value">Opening Ceremony & Group Photo: Room 601<br>Session 1: Room 219<br>Session 2: Room 305<br>July 12 Coffee Event: Room 219<br>School of Economics, Peking
               University</span>
           </li>
           <li>
@@ -732,20 +763,22 @@
           <div class="break-card all-hands-card">Opening Ceremony & Group Photo<small>Room 601</small></div>
           <div class="grid-spacer" aria-hidden="true"></div>
 
-          <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Session 1<small>Room 219</small></div>
-          <div class="grid-head track-b">Session 2<small>Room 305</small></div>
+          <div class="grid-head">Time<small>Morning sessions</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 219 · Chair: Felix Kubler</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 305 · Chair: Longtian Zhang</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-01</span></div>
             <h3>Bayesian optimization on the equilibrium manifold</h3>
             <p class="speaker">Felix Kubler</p>
+            <p class="affiliation">University of Zurich</p>
           </article>
           <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-01</span></div>
             <h3>Computing Power, Synthetic Data, and Welfare in the Generative-AI Economy</h3>
             <p class="speaker">Longtian Zhang</p>
+            <p class="affiliation">Central University of Finance and Economics</p>
           </article>
 
           <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
@@ -753,11 +786,13 @@
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-02</span></div>
             <h3>Operator Equilibrium Nets</h3>
             <p class="speaker">Jun Zhang</p>
+            <p class="affiliation">Rice University</p>
           </article>
           <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-02</span></div>
             <h3>Heterogeneous Attention and Macroeconomic Dynamics: Theory and LLM Experiments</h3>
             <p class="speaker">Jiahui Sun</p>
+            <p class="affiliation">Peking University</p>
           </article>
 
           <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
@@ -768,11 +803,13 @@
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-03</span></div>
             <h3>Informed Actor-Critic Method for Optimal Control in Economic Dynamics</h3>
             <p class="speaker">Serguei Maliar</p>
+            <p class="affiliation">Santa Clara University</p>
           </article>
           <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-03</span></div>
             <h3>Artificial Intelligence, Expertise Requirements, and Wealth Inequality</h3>
             <p class="speaker">Xuejing Ding</p>
+            <p class="affiliation">University of Chinese Academy of Sciences</p>
           </article>
 
           <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
@@ -780,26 +817,35 @@
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-04</span></div>
             <h3>Deep Learning for Dynamic Programming under Recursive Utility</h3>
             <p class="speaker">Xianhua Peng</p>
+            <p class="affiliation">Peking University HSBC Business School</p>
           </article>
           <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-04</span></div>
             <h3>The AI Growth Paradox: Incumbent Entrenchment and the Distribution of Innovation</h3>
             <p class="speaker">Guiyou Guan</p>
+            <p class="affiliation">University of California, Irvine</p>
           </article>
 
           <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
-          <div class="break-card">Lunch<small>12:15-14:00</small></div>
+          <div class="break-card">Lunch<small>Box lunch pickup and dining: Room 219 · 12:15-14:00</small></div>
+
+          <div class="grid-spacer" aria-hidden="true"></div>
+          <div class="grid-head">Time<small>Afternoon sessions</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 219 · Chair: Goutham Gopalakrishna</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 305 · Chair: Jinyun Fan</small></div>
 
           <div class="time-cell">14:00-14:40<span>Talk 5</span></div>
           <article class="talk-card is-speaker">
             <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS1-05</span></div>
             <h3>Institutional Asset Pricing with Segmentation and Household Heterogeneity</h3>
             <p class="speaker">Goutham Gopalakrishna</p>
+            <p class="affiliation">University of Toronto, Rotman School of Management</p>
           </article>
           <article class="talk-card is-macro">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS2-05</span></div>
             <h3>The Evolution of Labor Income Distribution under the Impact of Artificial Intelligence</h3>
             <p class="speaker">Jinyun Fan</p>
+            <p class="affiliation">Jilin University</p>
           </article>
 
           <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
@@ -808,11 +854,13 @@
             <h3>Macroeconomics with Foundation Models: Forecasting, Identification, and Structural Scenario Analysis
             </h3>
             <p class="speaker">Zhihang Liang</p>
+            <p class="affiliation">Boston College</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Finance</span><span>PS2-06</span></div>
             <h3>A Deep Ambiguity Framework for Portfolio Optimization: Integrating an LSTM-MDN Model</h3>
             <p class="speaker">Xinping Li / Yeguan Yu</p>
+            <p class="affiliation">Peking University</p>
           </article>
 
           <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
@@ -823,11 +871,13 @@
             <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-07</span></div>
             <h3>Equilibrium World Models</h3>
             <p class="speaker">Simon Scheidegger</p>
+            <p class="affiliation">HEC Lausanne</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">LLM</span><span>PS2-07</span></div>
             <h3>Understanding the Mechanism of Altruism in Large Language Models</h3>
             <p class="speaker">Shuhuai Zhang</p>
+            <p class="affiliation">Central University of Finance and Economics</p>
           </article>
 
           <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
@@ -836,15 +886,17 @@
             <h3>Applications of a Deep Learning-Based Probabilistic Approach to Economic Models with High-Dimensional
               Controls</h3>
             <p class="speaker">Ji Huang</p>
+            <p class="affiliation">The Chinese University of Hong Kong</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-08</span></div>
             <h3>Algorithmic Coordination in Global Games</h3>
             <p class="speaker">Xuesong Huang</p>
+            <p class="affiliation">Sun Yat-sen University</p>
           </article>
 
           <div class="time-cell break-time dinner-time">18:00-20:00<span>Conference Dinner</span></div>
-          <div class="break-card dinner-card">Conference Dinner<small>Saturday, July 11 · 18:00-20:00</small></div>
+          <div class="break-card dinner-card">Conference Dinner<small>Saturday, July 11 · 18:00-20:00 · Zhongguanxinyuan Yiyuan Chinese Restaurant, Guanhu Hall (中关新园怡园中餐厅观湖厅)</small></div>
         </div>
 
         <div class="day-title">
@@ -853,20 +905,22 @@
         </div>
 
         <div class="schedule-grid" aria-label="Schedule for July 12">
-          <div class="grid-head">Time<small>Session</small></div>
-          <div class="grid-head track-a">Session 1<small>Room 219</small></div>
-          <div class="grid-head track-b">Session 2<small>Room 305</small></div>
+          <div class="grid-head">Time<small>Morning sessions</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 219 · Chair: Yucheng Yang</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 305 · Chair: Sixuan Li</small></div>
 
           <div class="time-cell">09:00-09:40<span>Talk 1</span></div>
           <article class="talk-card is-speaker">
             <div class="talk-meta"><span class="badge">Financial Economics</span><span>PS1-09</span></div>
             <h3>Liquidity and Risk in OTC Markets: A Theory of Asset Pricing and Portfolio Flows</h3>
             <p class="speaker">Yucheng Yang</p>
+            <p class="affiliation">University of Zurich</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-09</span></div>
             <h3>Administrative Transaction Networks Reveal Distinct Informational Regimes across Economic Sectors</h3>
             <p class="speaker">Sixuan Li</p>
+            <p class="affiliation">Peking University</p>
           </article>
 
           <div class="time-cell">09:40-10:20<span>Talk 2</span></div>
@@ -875,11 +929,13 @@
             <h3>Continuous-Time Heterogeneous Agent Models with Recursive Utility and Preference for Late Resolution
             </h3>
             <p class="speaker">Qing Tang</p>
+            <p class="affiliation">China University of Geosciences (Wuhan)</p>
           </article>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Microeconomics</span><span>PS2-10</span></div>
             <h3>Car Adoption: Fuel or Electric</h3>
             <p class="speaker">Dandan Wang</p>
+            <p class="affiliation">Liaoning University</p>
           </article>
 
           <div class="time-cell break-time">10:20-10:55<span>Break</span></div>
@@ -890,11 +946,13 @@
             <div class="talk-meta"><span class="badge">Quantitative Macroeconomics</span><span>PS1-11</span></div>
             <h3>GRAM: Generative Reasoning and Augmented Modeling for Quantitative Macroeconomics</h3>
             <p class="speaker">Yaolang Zhong</p>
+            <p class="affiliation">Presenter for Zhigang Feng, University of Nebraska at Omaha</p>
           </article>
           <article class="talk-card is-econometrics">
             <div class="talk-meta"><span class="badge">Econometrics</span><span>PS2-11</span></div>
             <h3>Causal Mediation Analysis with Proxy Variables and Minimax Learning</h3>
             <p class="speaker">Jinfeng Li</p>
+            <p class="affiliation">Tsinghua University</p>
           </article>
 
           <div class="time-cell">11:35-12:15<span>Talk 4</span></div>
@@ -903,66 +961,72 @@
             <h3>Using Deep Learning and Finite-Difference Methods Together to Solve Heterogeneous Agent Models with
               Aggregate Shocks</h3>
             <p class="speaker">Nam Phan</p>
+            <p class="affiliation">University of Western Australia</p>
           </article>
-          <article class="talk-card is-empty" aria-label="No presentation scheduled">
-            <div class="talk-meta"><span class="badge">Session 2</span><span>PS2-12</span></div>
-            <h3>No presentation scheduled</h3>
+          <article class="talk-card is-other">
+            <div class="talk-meta"><span class="badge">Public Finance</span><span>PS2-12</span></div>
+            <h3>Machine Learning for Optimal Nonlinear Income Taxation: A VPINN Approach</h3>
+            <p class="speaker">Yige Xu</p>
+            <p class="affiliation">University of International Business and Economics</p>
           </article>
 
           <div class="time-cell break-time">12:15-14:00<span>Lunch</span></div>
-          <div class="break-card">Lunch<small>12:15-14:00</small></div>
+          <div class="break-card">Lunch<small>Box lunch pickup and dining: Room 219 · 12:15-14:00</small></div>
 
-          <div class="time-cell">14:00-14:40<span>Talk 5</span></div>
+          <div class="time-cell all-hands-time">14:00-14:40<span>All participants</span></div>
+          <div class="break-card all-hands-card invited-talk-card">
+            <span>Coffee Event</span>
+            <strong>CERES: Computational Economics via Reconfigurable Electronic Systems</strong>
+            <small>Qiuping Wu · Institute for Artificial Intelligence, Peking University · Room 219 · Coffee served in the room</small>
+          </div>
+
+          <div class="grid-spacer" aria-hidden="true"></div>
+          <div class="grid-head">Time<small>Parallel talks resume</small></div>
+          <div class="grid-head track-a">Session 1<small>Room 219 · Chair: Shenghao Zhu</small></div>
+          <div class="grid-head track-b">Session 2<small>Room 305 · Chair: Weijia Wang</small></div>
+
+          <div class="time-cell">14:40-15:20<span>Talk 5</span></div>
           <article class="talk-card is-speaker">
             <div class="talk-meta"><span class="badge">Macroeconomics</span><span>PS1-13</span></div>
             <h3>Stability of a Heterogeneous Agent Model with Precautionary Savings</h3>
             <p class="speaker">Shenghao Zhu</p>
+            <p class="affiliation">University of International Business and Economics</p>
           </article>
           <article class="talk-card is-econometrics">
             <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS2-13</span></div>
             <h3>Institutional Digital Opening, Telecommunications Thresholds, and Bilateral Services Exports: Evidence
               from Double Machine Learning</h3>
             <p class="speaker">Weijia Wang</p>
+            <p class="affiliation">Xi'an Jiaotong University</p>
           </article>
 
-          <div class="time-cell">14:40-15:20<span>Talk 6</span></div>
+          <div class="time-cell">15:20-16:00<span>Talk 6</span></div>
           <article class="talk-card is-other">
             <div class="talk-meta"><span class="badge">Finance</span><span>PS1-14</span></div>
             <h3>Asset Pricing with Endogenous Default</h3>
             <p class="speaker">Paul Ehling</p>
+            <p class="affiliation">BI Norwegian Business School</p>
           </article>
           <article class="talk-card is-econometrics">
             <div class="talk-meta"><span class="badge">Asset Pricing</span><span>PS2-14</span></div>
             <h3>Factor Investing and the Integration of Corporate Bond and Equity Markets</h3>
             <p class="speaker">Yuanzhi Wang</p>
+            <p class="affiliation">City University of Hong Kong</p>
           </article>
 
-          <div class="time-cell break-time">15:20-15:55<span>Break</span></div>
-          <div class="break-card">Afternoon Coffee Break<small>Outside Room 219 · 15:20-15:55</small></div>
-
-          <div class="time-cell">15:55-16:35<span>Talk 7</span></div>
+          <div class="time-cell">16:00-16:40<span>Talk 7</span></div>
           <article class="talk-card is-computing">
             <div class="talk-meta"><span class="badge">Computational Macroeconomics</span><span>PS1-15</span></div>
             <h3>Accelerating the Krusell-Smith Algorithm with Deep Learning</h3>
             <p class="speaker">Yoshiya Yokomoto</p>
+            <p class="affiliation">Keio University</p>
           </article>
           <article class="talk-card is-econometrics">
             <div class="talk-meta"><span class="badge">Applied Econometrics</span><span>PS2-15</span></div>
             <h3>Mechanisms Through Which AI Alleviates Baumol's Cost Disease: Causal Inference Evidence from Double
               Machine Learning</h3>
             <p class="speaker">Qiangqiang Liu</p>
-          </article>
-
-          <div class="time-cell">16:35-17:15<span>Talk 8</span></div>
-          <article class="talk-card is-computing">
-            <div class="talk-meta"><span class="badge">Computational Economics</span><span>PS1-16</span></div>
-            <h3>CERES: Computational Economics via Reconfigurable Electronic System</h3>
-            <p class="speaker">Qiuping Wu</p>
-          </article>
-          <article class="talk-card is-other">
-            <div class="talk-meta"><span class="badge">Public Finance</span><span>PS2-16</span></div>
-            <h3>Machine Learning for Optimal Nonlinear Income Taxation: A VPINN Approach</h3>
-            <p class="speaker">Yige Xu</p>
+            <p class="affiliation">School of Economics, Harbin University of Commerce</p>
           </article>
         </div>
       </div>
@@ -975,7 +1039,7 @@
           <ul>
             <li><strong>Presentation format:</strong> each talk is 30 minutes. The conference language is English.</li>
             <li><strong>Venue:</strong> the opening ceremony and group photo take place in Room 601; parallel sessions take place in Rooms 219 and 305, School of Economics, Peking University.</li>
-            <li><strong>Coffee breaks:</strong> morning and afternoon coffee breaks are held outside Room 219.</li>
+            <li><strong>Coffee:</strong> regular coffee breaks are held outside Room 219; on July 12 afternoon, coffee is served during the 14:00 coffee event in Room 219, with no separate afternoon break.</li>
             <li><strong>Campus entry:</strong> participants should enter through PKU Xiaodongmen and bring a passport or national ID card for verification.</li>
             <li><strong>Attendance-only participation:</strong> participants without a paper presentation may attend, but registration is required.</li>
           </ul>
